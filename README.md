@@ -5,4 +5,4 @@ For documentation we'll use overleaf - the google docs of latex:
 https://www.overleaf.com/5997698684sjtftvvzrmgx (editing)  
 https://www.overleaf.com/5997698684sjtftvvzrmgx (viewing)  
   
-VISION: "Improving the personal financial capability of Maltese citzens duringlife-events and retirements to enable them to reach better informed financial decisions that fit their individual circumstances"
+VISION: "Improving the personal financial capability of Maltese citzens during life-events and retirements to enable them to reach better informed financial decisions that fit their individual circumstances"
