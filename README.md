@@ -6,3 +6,7 @@ https://www.overleaf.com/5997698684sjtftvvzrmgx (editing)
 https://www.overleaf.com/5997698684sjtftvvzrmgx (viewing)  
   
 VISION: "Improving the personal financial capability of Maltese citzens during life-events and retirements to enable them to reach better informed financial decisions that fit their individual circumstances"
+
+UI:
+Currently, the MONEY decreases by pressing the SPACEBAR, and the SANITY decreases by pressing the DOWN ARROW.
+A useful video to explain UI is [this one.](https://youtu.be/_RIsfVOqTaE)
