@@ -91,37 +91,37 @@
     <None Include="Assets\Shapes2D\Shaders\Rectangle.cginc" />
     <None Include="Assets\Shapes2D\Shaders\Polygon.cginc" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/jarhead/JarheadPro/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/WindowsFiles/ProgramFiles/Unity/Editor/2019.2.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -299,6 +299,9 @@
     </Reference>
     <Reference Include="UnityEngine.XRModule">
       <HintPath>D:/WindowsFiles/ProgramFiles/Unity/Editor/2019.2.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
+      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/WindowsFiles/ProgramFiles/Unity/Editor/2019.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -654,6 +657,20 @@
     <Reference Include="Boo.Lang">
       <HintPath>D:/WindowsFiles/ProgramFiles/Unity/Editor/2019.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="AstarPathfindingProject.csproj">
+      <Project>{153727C7-05DD-FA15-EAF7-149FE1CFD764}</Project>
+      <Name>AstarPathfindingProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="PackageToolsEditor.csproj">
+      <Project>{2240C16A-E834-E889-CE0D-1C43307A83FC}</Project>
+      <Name>PackageToolsEditor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
+      <Project>{D2F7B9F4-78CA-8918-33E7-B2CCB93EA6BE}</Project>
+      <Name>AstarPathfindingProjectEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

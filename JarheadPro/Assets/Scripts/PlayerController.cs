@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 9;                         // Speed of player
+    public float speed = 14;                         // Speed of player
     public float acceleration = 75;                 // Acceleration when starting to walk
     public float deceleration = 70;                 // Deceleration when slowing down
     private Vector3 velocity;                       // To store x and y velocity at the current update
@@ -13,9 +13,7 @@ public class PlayerController : MonoBehaviour
     
     // Decided on bounds
     private float maxY = -18f;
-    private float maxZ = 1f;
     private float minY = -21f;
-    private float minZ = -1.9f;
 
     public bool canGoUp = true;
     public bool canGoDown = true;
@@ -28,7 +26,7 @@ public class PlayerController : MonoBehaviour
         srenderer = transform.Find("Body").GetComponent<SpriteRenderer>();
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         moveHor = Input.GetAxisRaw("Horizontal");
         moveVer = Input.GetAxisRaw("Vertical");
@@ -62,6 +60,7 @@ public class PlayerController : MonoBehaviour
         else decVer();
 
         animator.SetFloat("Velocity", Mathf.Abs(velocity.x)+ Mathf.Abs(velocity.y));
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y + 13);
         transform.Translate(velocity * Time.deltaTime);
     }
 
@@ -93,18 +92,16 @@ public class PlayerController : MonoBehaviour
     private void accVer()
     {
         velocity.y = Mathf.MoveTowards(velocity.y, speed * moveVer, acceleration * Time.deltaTime);
-        velocity.z = Mathf.MoveTowards(velocity.z, speed * moveVer, acceleration * Time.deltaTime);
     }
 
     private void decVer()
     {
         velocity.y = Mathf.MoveTowards(velocity.y, 0, deceleration * Time.deltaTime);
-        velocity.z = Mathf.MoveTowards(velocity.z, 0, deceleration * Time.deltaTime);
     }
 
     private void checkBoundaries()
     {
-        if (transform.Find("Collider").position.y >= minY && transform.Find("Collider").position.z >= minZ)
+        if (transform.Find("Collider").position.y >= minY)
         {
             canGoDown = true;
         }
@@ -114,7 +111,7 @@ public class PlayerController : MonoBehaviour
             decVer();
         }
         // Check if can go up (upper bound check)
-        if (transform.Find("Collider").position.y <= maxY && transform.Find("Collider").position.z <= maxZ)
+        if (transform.Find("Collider").position.y <= maxY)
         {
             canGoUp = true;
         }

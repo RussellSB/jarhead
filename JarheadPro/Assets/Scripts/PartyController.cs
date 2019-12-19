@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PartyController : MonoBehaviour
 {
-    public float speed = 20;
+    public float speed = 50;
     private float step;
-
+    
     public List<GameObject> partyJarbuds;
     private List<Vector2> partyTargets;
 
@@ -44,10 +44,14 @@ public class PartyController : MonoBehaviour
     }
 
     // Fixed Update for physics
-    void FixedUpdate()
+    void Update()
     {
         noteChanges();
-        if (currPopulation > prevPopulation) addTarget();
+        if (currPopulation > prevPopulation)
+        {
+            addTarget();
+        }
+        
         if (currCollPos != prevCollPos) updateTargets();
         if (currPopulation > 0) moveJarbuds();
     }
@@ -82,6 +86,7 @@ public class PartyController : MonoBehaviour
             }
 
         } while (isOccupied());
+
         partyTargets.Add(point2d);
     }
 
@@ -130,10 +135,34 @@ public class PartyController : MonoBehaviour
     {
         for (int i = 0; i < currPopulation; i++)
         {
+            Vector2 prevPos;
+            Vector2 currPos;
+            Vector2 currTarget;
+            Vector2 velocity;
+
             step = speed * Time.deltaTime;
-            Vector2 currPos = partyJarbuds[i].GetComponent<Transform>().position;
-            Vector2 currTarget = partyTargets[i];
-            partyJarbuds[i].GetComponent<Transform>().position = Vector2.MoveTowards(currPos, currTarget, step);
+            prevPos = partyJarbuds[i].GetComponent<Transform>().position;
+            currTarget = partyTargets[i];
+           
+            partyJarbuds[i].GetComponent<Transform>().position = Vector2.MoveTowards(prevPos, currTarget, step);
+            currPos = partyJarbuds[i].GetComponent<Transform>().position;
+            partyJarbuds[i].GetComponent<Transform>().Translate(0, 0, currPos.y + 18); // Maps depth
+
+            // Note: Had to change from FixedUpdate to Update for the animator
+            velocity = (currPos - prevPos) / Time.deltaTime;
+
+            if(velocity.x < 0)
+            {
+                partyJarbuds[i].GetComponent<Transform>().Find("Jar").gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                partyJarbuds[i].GetComponent<Transform>().Find("Symbol").gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                partyJarbuds[i].GetComponent<Transform>().Find("Jar").gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                partyJarbuds[i].GetComponent<Transform>().Find("Symbol").gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            
+            partyJarbuds[i].GetComponent<Transform>().Find("Jar").gameObject.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(velocity.x));
         }
     }
 }
