@@ -32,7 +32,11 @@ public class PlayerController : MonoBehaviour
         moveVer = Input.GetAxisRaw("Vertical");
 
         // Horzontal Movement
-        if (moveHor != 0)
+        if (moveHor == 1)
+        {
+            velocity.x = Mathf.MoveTowards(velocity.x, speed * moveHor, acceleration * Time.deltaTime);
+        }
+        else if (moveHor == -1 && !animator.GetBool("isCollided"))
         {
             velocity.x = Mathf.MoveTowards(velocity.x, speed * moveHor, acceleration * Time.deltaTime);
         }
@@ -41,7 +45,7 @@ public class PlayerController : MonoBehaviour
             velocity.x = Mathf.MoveTowards(velocity.x, 0, deceleration * Time.deltaTime);
         }
 
-        if(moveHor == -1)
+        if(moveHor == -1 && !animator.GetBool("isCollided"))
         {
             srenderer.flipX = true;
         }
@@ -75,7 +79,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                animator.SetBool("isCollided", true);
+               animator.SetBool("isCollided", true);
             }
             
         }

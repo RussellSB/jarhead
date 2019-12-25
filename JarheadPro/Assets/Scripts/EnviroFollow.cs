@@ -9,7 +9,7 @@ public class EnviroFollow : MonoBehaviour
     public float speed = 20;
     public float offsetX = -5;
 
-    private float offsetY = -19f;
+    private float offsetY;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class EnviroFollow : MonoBehaviour
         if(Input.GetAxisRaw("Horizontal") == 1 && player.transform.position.x + offsetX > transform.position.x)
         {
             float step = speed * Time.deltaTime;
-            target = new Vector3(player.transform.position.x + offsetX, offsetY, transform.position.z);
+            target = new Vector3(player.transform.position.x + offsetX, transform.position.y, transform.position.z);
             transform.position = Vector3.MoveTowards(transform.position, target, step);
         }
         
