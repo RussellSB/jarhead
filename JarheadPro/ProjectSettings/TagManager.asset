@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Jarbud
   - Jarhead
+  - ForceField
   layers:
   - Default
   - TransparentFX
@@ -23,8 +24,8 @@ TagManager:
   - PlatformLow
   - PlayerFeet
   - JarbudFeet
-  - 
-  - 
+  - Ground
+  - ForceField
   - 
   - 
   - 

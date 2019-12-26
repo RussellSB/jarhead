@@ -13,7 +13,7 @@ namespace UnityStandardAssets._2D
 
         private float m_OffsetZ;
         public float m_OffsetX = 10f;
-        public float m_OffsetY = 7.5f;
+        public float m_OffsetY = -5f;
         private Vector3 m_LastTargetPosition;
         private Vector3 m_CurrentVelocity;
         private Vector3 m_LookAheadPos;
@@ -23,8 +23,6 @@ namespace UnityStandardAssets._2D
         {
             m_LastTargetPosition = target.position;
             m_OffsetZ = (transform.position - target.position).z;
-            //m_OffsetX = (transform.position - target.position).z;
-            //m_OffsetY = (transform.position - target.position).z;
             transform.parent = null;
         }
 
@@ -47,7 +45,7 @@ namespace UnityStandardAssets._2D
             }
 
             Vector3 aheadTargetPos = target.position + m_LookAheadPos + Vector3.forward*m_OffsetZ;
-            aheadTargetPos = new Vector3(aheadTargetPos.x + m_OffsetX, aheadTargetPos.y + m_OffsetY, aheadTargetPos.z);
+            aheadTargetPos = new Vector3(aheadTargetPos.x + m_OffsetX, m_OffsetY, aheadTargetPos.z);
             Vector3 newPos = Vector3.SmoothDamp(transform.position, aheadTargetPos, ref m_CurrentVelocity, damping);
 
             transform.position = newPos;
