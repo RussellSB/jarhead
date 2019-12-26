@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
         else decVer();
 
         animator.SetFloat("Velocity", Mathf.Abs(velocity.x)+ Mathf.Abs(velocity.y));
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y + 13);
         transform.Translate(velocity * Time.deltaTime);
     }
 

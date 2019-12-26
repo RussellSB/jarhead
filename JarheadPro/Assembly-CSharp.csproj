@@ -65,7 +65,8 @@
     <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Scripts\DebugLocGlobal.cs" />
     <Compile Include="Assets\Scripts\EnviroFollow.cs" />
-    <Compile Include="Assets\Scripts\Jarhead.cs" />
+    <Compile Include="Assets\Scripts\MapJarbud.cs" />
+    <Compile Include="Assets\Scripts\MapJarhead.cs" />
     <Compile Include="Assets\Scripts\Money.cs" />
     <Compile Include="Assets\Scripts\NetworkController.cs" />
     <Compile Include="Assets\Scripts\PartyController.cs" />
