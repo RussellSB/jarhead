@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\NetworkController.cs" />
     <Compile Include="Assets\Scripts\PartyController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Scrolling.cs" />
     <Compile Include="Assets\Scripts\SelectController.cs" />
     <Compile Include="Assets\Scripts\Tiling.cs" />
     <Compile Include="Assets\Shapes2D\Demos\DragCamera.cs" />
