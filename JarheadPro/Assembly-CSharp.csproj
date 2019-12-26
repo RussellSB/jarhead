@@ -66,9 +66,11 @@
     <Compile Include="Assets\Scripts\DebugLocGlobal.cs" />
     <Compile Include="Assets\Scripts\EnviroFollow.cs" />
     <Compile Include="Assets\Scripts\Jarhead.cs" />
+    <Compile Include="Assets\Scripts\Money.cs" />
     <Compile Include="Assets\Scripts\NetworkController.cs" />
     <Compile Include="Assets\Scripts\PartyController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Sanitybar.cs" />
     <Compile Include="Assets\Scripts\SelectController.cs" />
     <Compile Include="Assets\Scripts\Tiling.cs" />
     <Compile Include="Assets\Shapes2D\Demos\DragCamera.cs" />
@@ -92,37 +94,37 @@
     <None Include="Assets\Shapes2D\Shaders\Rectangle.cginc" />
     <None Include="Assets\Shapes2D\Shaders\Polygon.cginc" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -302,7 +304,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead3D/JarheadPro/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
+      <HintPath>C:/Users/Textman/Desktop/jarhead/JarheadPro/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
