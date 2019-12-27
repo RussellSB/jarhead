@@ -30,6 +30,8 @@ public class PartyController : MonoBehaviour
     public int currPopulation;
     private int prevPopulation;
 
+    public GameObject job;
+    public GameObject housing;
 
     // Start is called before the first frame update
     void Start()
@@ -49,6 +51,7 @@ public class PartyController : MonoBehaviour
         noteChanges();
         if (currPopulation > prevPopulation)
         {
+            decisionPoof();
             addTarget();
         }
         
@@ -64,6 +67,36 @@ public class PartyController : MonoBehaviour
 
         prevCollPos = currCollPos;
         currCollPos = partyArea.position;
+    }
+
+    // Poofs other related contrasting decision jarbuds if there are any
+    void decisionPoof()
+    {
+        if(partyJarbuds[partyJarbuds.Count-1].name.StartsWith("Job") && !job){
+            job = partyJarbuds[partyJarbuds.Count-1];
+
+            GameObject[] allJarbuds = GameObject.FindGameObjectsWithTag("Jarbud");
+            foreach(GameObject jarbud in allJarbuds)
+            {
+                if(jarbud.name.StartsWith("Job") && jarbud != job)
+                {
+                    jarbud.SetActive(false);
+                }
+            }
+        }
+
+        if (partyJarbuds[partyJarbuds.Count-1].name.StartsWith("Housing") && !housing){
+            housing = partyJarbuds[partyJarbuds.Count-1];
+
+            GameObject[] allJarbuds = GameObject.FindGameObjectsWithTag("Jarbud");
+            foreach (GameObject jarbud in allJarbuds)
+            {
+                if (jarbud.name.StartsWith("Housing") && jarbud != housing)
+                {
+                    jarbud.SetActive(false);
+                }
+            }
+        }
     }
     
     // Adds a target to the partyAreaCollider
