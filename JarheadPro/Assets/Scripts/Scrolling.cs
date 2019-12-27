@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class Scrolling : MonoBehaviour
 {
+    public bool scrolling, parallax;
+
     public float backgroundSize;
+    public float parallaxSpeed;
 
     private Transform cameraTransform;
     private Transform[] layers;
     private float viewZone = 10;
     private int leftIndex;
     private int rightIndex;
+    private float lastCameraX;
 
     // Start is called before the first frame update
     void Start()
     {
         cameraTransform = Camera.main.transform;
+        lastCameraX = cameraTransform.position.x;
         layers = new Transform[transform.childCount];
         for(int i = 0; i < transform.childCount; i++)
         {
@@ -30,14 +35,24 @@ public class Scrolling : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z)) ScrollLeft();
-        if (Input.GetKeyDown(KeyCode.C)) ScrollRight();
+        
+        if (parallax)
+        {
+            float deltaX = cameraTransform.position.x - lastCameraX;
+            transform.position += Vector3.right * (deltaX * parallaxSpeed);
+        }
+        lastCameraX = cameraTransform.position.x;
 
-        //if (cameraTransform.position.x < (layers[leftIndex].transform.position.x + viewZone))
-        //    ScrollLeft();
 
-        //if (cameraTransform.position.x > (layers[rightIndex].transform.position.x - viewZone))
-         //   ScrollRight();
+        if (scrolling)
+        {
+            if (cameraTransform.position.x < (layers[leftIndex].transform.position.x + viewZone))
+                ScrollLeft();
+
+            if (cameraTransform.position.x > (layers[rightIndex].transform.position.x - viewZone))
+                ScrollRight();
+        }
+        
     }
 
     void ScrollLeft()
@@ -56,7 +71,7 @@ public class Scrolling : MonoBehaviour
     void ScrollRight()
     {
         int lastLeft = leftIndex;
-        layers[rightIndex].position = new Vector3(layers[rightIndex].position.x + backgroundSize,
+        layers[leftIndex].position = new Vector3(layers[rightIndex].position.x + backgroundSize,
                                                     transform.position.y, transform.position.z);
         rightIndex = leftIndex;
         leftIndex++;
