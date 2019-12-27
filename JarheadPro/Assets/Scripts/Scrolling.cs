@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Scrolling : MonoBehaviour
 {
-    public bool scrolling, parallax;
+    public bool scrolling, parallaxEntity;
 
     public float backgroundSize;
     public float parallaxSpeed;
@@ -15,12 +15,14 @@ public class Scrolling : MonoBehaviour
     private int leftIndex;
     private int rightIndex;
     private float lastCameraX;
+    private float lastPlayerX;
+
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         cameraTransform = Camera.main.transform;
-        lastCameraX = cameraTransform.position.x;
         layers = new Transform[transform.childCount];
         for(int i = 0; i < transform.childCount; i++)
         {
@@ -30,19 +32,21 @@ public class Scrolling : MonoBehaviour
         leftIndex = 0;
         rightIndex = layers.Length - 1;
 
+        player = GameObject.FindGameObjectWithTag("Player");
+        lastPlayerX = player.transform.position.x;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (parallax)
+
+        if (parallaxEntity)
         {
-            float deltaX = cameraTransform.position.x - lastCameraX;
+            float deltaX = player.transform.position.x - lastPlayerX;
             transform.position += Vector3.right * (deltaX * parallaxSpeed);
         }
-        lastCameraX = cameraTransform.position.x;
-
+        lastPlayerX = player.transform.position.x;
 
         if (scrolling)
         {

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8858361111855734148}
   - component: {fileID: 8858361110174629912}
   - component: {fileID: -7521729926091723424}
+  - component: {fileID: -2410722074754621367}
   m_Layer: 8
   m_Name: JobDelivery1
   m_TagString: Jarbud
@@ -77,6 +78,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478d9c2eb7cec84f8a2ee70eda8e96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2410722074754621367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731746635250565822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f454c926494853458177bf2b86d17cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrolling: 0
+  parallax: 0
+  parallaxEntity: 1
+  backgroundSize: 0
+  parallaxSpeed: -0.2
 --- !u!1 &6731746636057315549
 GameObject:
   m_ObjectHideFlags: 0

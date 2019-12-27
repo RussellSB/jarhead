@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 4820279113850800185}
   - component: {fileID: 4820279115039312016}
   - component: {fileID: -5470613725996479507}
+  - component: {fileID: 4108516030277506395}
   m_Layer: 8
   m_Name: HousingReal
   m_TagString: Jarbud
@@ -222,6 +223,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478d9c2eb7cec84f8a2ee70eda8e96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4108516030277506395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7305363929403676419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f454c926494853458177bf2b86d17cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrolling: 0
+  parallax: 0
+  parallaxEntity: 1
+  backgroundSize: 0
+  parallaxSpeed: -0.2
 --- !u!1 &7305363930210426208
 GameObject:
   m_ObjectHideFlags: 0

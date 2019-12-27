@@ -148,7 +148,6 @@ public class PartyController : MonoBehaviour
             currPos = partyJarbuds[i].GetComponent<Transform>().position;
             partyJarbuds[i].GetComponent<Transform>().Translate(0, 0, currPos.y + 18); // Maps depth
 
-
             // Note: Had to change from FixedUpdate to Update for the animator
             velocity = (currPos - prevPos) / Time.deltaTime;
 

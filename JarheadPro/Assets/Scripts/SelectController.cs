@@ -38,6 +38,7 @@ public class SelectController : MonoBehaviour
                 Cursor.SetCursor(jarbudCursor, hotSpot, cursorMode);
                 if (Input.GetMouseButtonDown(0))
                 {
+                    hitObject.GetComponent<Scrolling>().enabled = false;
                     partyController.partyJarbuds.Add(hitObject);
                 }
             }

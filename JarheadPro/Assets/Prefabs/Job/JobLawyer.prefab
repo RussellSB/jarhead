@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 1722476299102431015}
   - component: {fileID: 1722476298076592918}
   - component: {fileID: -1785730893136935596}
+  - component: {fileID: 2125415914820300569}
   m_Layer: 8
   m_Name: JobLawyer
   m_TagString: Jarbud
@@ -71,7 +72,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3486833430808147997}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.25, y: -18, z: 0}
+  m_LocalPosition: {x: 14.96, y: -18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3486833432594324195}
@@ -121,6 +122,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3478d9c2eb7cec84f8a2ee70eda8e96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2125415914820300569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3486833430808147997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f454c926494853458177bf2b86d17cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrolling: 0
+  parallax: 0
+  parallaxEntity: 1
+  backgroundSize: 0
+  parallaxSpeed: -0.2
 --- !u!1 &3486833431615943294
 GameObject:
   m_ObjectHideFlags: 0
