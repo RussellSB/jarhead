@@ -236,10 +236,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrolling: 0
-  parallax: 0
   parallaxEntity: 1
   backgroundSize: 0
-  parallaxSpeed: -0.2
+  parallaxSpeed: -0.5
 --- !u!1 &7305363930210426208
 GameObject:
   m_ObjectHideFlags: 0
