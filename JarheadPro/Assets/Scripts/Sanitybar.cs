@@ -85,14 +85,8 @@ public class Sanity
     // Maximum value for sanity.
     public const int SANITY_MAX = 100;
     public const int SANITY_MIN = 0;
-    private float sanity;
-    private float decay;
-
-    public Sanity()
-    {
-        sanity = SANITY_MAX;
-        decay = 1f;
-    }
+    private static float sanity = SANITY_MAX;
+    private static float decay = 1f;
 
     // Updates sanity per tick safely.
     public void Tick()
@@ -113,7 +107,7 @@ public class Sanity
     {
         if(decay >= 0 && decay <= 100)
         {
-            this.decay = decay;
+            Sanity.decay = decay;
         } 
     }
 
