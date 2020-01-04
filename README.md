@@ -7,7 +7,8 @@ https://www.overleaf.com/5997698684sjtftvvzrmgx (viewing)
   
 VISION: "Improving the personal financial capability of Maltese citzens during life-events and retirements to enable them to reach better informed financial decisions that fit their individual circumstances"
 
-UI:
+## UI
+### Money, and Sanity
 For now, the initial money is set to 1000 euros, and the sanity is set to its maximum: 100.
 
 Once the game starts the money decreases quickly, but then this decrease slows down. Sanity decreases depending on how LOW money is: the lower it is the faster it goes down.
@@ -28,3 +29,18 @@ The sanity bar should change emoticons and colors with time. This assumes a rang
 The colors go: *Teal, Green, Yellow, Orange, Red*.
 
 The UI is all in a game object called **Canvas**, which turns elements into UI elements. This is where the sanity bar and the money can be found.
+
+### Pause Menu
+The Pause menu is a separate game object under the `Canvas`. When the `Pause` button or the `ESC` key are pressed, the pause menu will appear, and time will stop.
+
+The current effects are that all objects on screen become immobile, the screen gets darker, and all stats (Money and Sanity) stop changing. 
+
+In this menu, the same sanity bar and money stat are duplicated. This is done with the use of the `static` modifier. In effect, the money and sanity in the UI are the same as the money and sanity in the pause bar.
+This menu also has a `RESUME` button which will unpause the game. The pause and resume actions are done using the `Pause` and `Resume` functions in `PauseMenu`.
+
+Some things however are not based on ingame time. They might change according to the `Update()` function, which isn't always based on time. In this case, to know whether the game should be paused or not, one can use the
+static `isPaused` boolean in `PauseMenu`. So if you want to make things only work if the game is *unpaused*, you would do:
+
+```C#
+if(!PauseMenu.isPaused){ ... }
+```
