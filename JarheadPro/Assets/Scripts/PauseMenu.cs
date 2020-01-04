@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
 
+    public GameObject Input_selectController;
+
     // Update is called once per frame
     void Update()
     {
@@ -15,9 +17,11 @@ public class PauseMenu : MonoBehaviour
         {
             if (isPaused)
             {
+                Input_selectController.SetActive(true);
                 Resume();
             } else
             {
+                Input_selectController.SetActive(false);
                 Pause();
             }
         }
