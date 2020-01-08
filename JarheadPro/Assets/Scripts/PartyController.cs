@@ -7,7 +7,7 @@ public class PartyController : MonoBehaviour
     public float speed = 50;
     private float step;
     
-    public List<GameObject> partyJarbuds;
+    public static List<GameObject> partyJarbuds;
     private List<Vector2> partyTargets;
 
     private Transform partyArea;
@@ -46,7 +46,7 @@ public class PartyController : MonoBehaviour
     }
 
     // Fixed Update for physics
-    void FixedUpdate()
+    void Update()
     {
         noteChanges();
         if (currPopulation > prevPopulation)
@@ -198,7 +198,8 @@ public class PartyController : MonoBehaviour
             step = speed * Time.deltaTime;
             prevPos = partyJarbuds[i].GetComponent<Transform>().position;
             currTarget = partyTargets[i];
-           
+            
+            Vector2 movePosition = Vector2.MoveTowards(prevPos, currTarget, step);
             partyJarbuds[i].GetComponent<Transform>().position = Vector2.MoveTowards(prevPos, currTarget, step);
             currPos = partyJarbuds[i].GetComponent<Transform>().position;
             partyJarbuds[i].GetComponent<Transform>().Translate(0, 0, currPos.y + 18); // Maps depth
@@ -217,7 +218,7 @@ public class PartyController : MonoBehaviour
                 partyJarbuds[i].GetComponent<Transform>().Find("Symbol").gameObject.GetComponent<SpriteRenderer>().flipX = false;
             }
             
-            partyJarbuds[i].GetComponent<Transform>().Find("Jar").gameObject.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(velocity.x));
+            partyJarbuds[i].GetComponent<Transform>().Find("Jar").gameObject.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(velocity.x + velocity.y));
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NetworkController : MonoBehaviour
 {
-    public List<GameObject> networkJarheads;
+    public static List<GameObject> networkJarheads;
 
     public int currPopulation;
     private int prevPopulation;

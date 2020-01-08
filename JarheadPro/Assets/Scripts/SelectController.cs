@@ -10,20 +10,12 @@ public class SelectController : MonoBehaviour
     public CursorMode cursorMode;
     public Vector2 hotSpot;
 
-    public GameObject Input_partyController;
-    public GameObject Input_networkController;
-    private PartyController partyController;
-    private NetworkController networkController;
-
     private GameObject hitObject;
 
     private void Start()
     {
         cursorMode = CursorMode.Auto;
         hotSpot = new Vector2(jarbudCursor.width / 2, jarbudCursor.height / 2);
-
-        partyController = Input_partyController.GetComponent<PartyController>();
-        networkController = Input_networkController.GetComponent<NetworkController>();
     }
 
     private void Update()
@@ -39,21 +31,34 @@ public class SelectController : MonoBehaviour
         if (Physics.Raycast(start, transform.forward, out hit))
         {
             hitObject = hit.collider.gameObject;
-            if (hitObject.tag == "Jarbud" && !partyController.partyJarbuds.Contains(hitObject))
+            if (hitObject.tag == "Jarbud")
             {
                 Cursor.SetCursor(jarbudCursor, hotSpot, cursorMode);
+
                 if (Input.GetMouseButtonDown(0))
                 {
-                    hitObject.GetComponent<Scrolling>().enabled = false;
-                    partyController.partyJarbuds.Add(hitObject);
+                    GameObject infoBubble = hitObject.transform.Find("infoBubble").gameObject;
+                    Animator animator = infoBubble.GetComponent<Animator>();
+                    if (animator.GetBool("Close"))
+                    {
+                        animator.SetBool("Close", false);
+                        animator.SetBool("Open", true);
+                    } 
+                    else
+                    {
+                        animator.SetBool("Open", false);
+                        animator.SetBool("Close", true);
+                    }
                 }
+
+                
             }
             if (hitObject.tag == "Jarhead")
             {
                 Cursor.SetCursor(jarheadCursor, hotSpot, cursorMode);
                 if (Input.GetMouseButtonDown(0))
                 {
-                    networkController.networkJarheads.Add(hitObject);
+                    NetworkController.networkJarheads.Add(hitObject);
                     hitObject.SetActive(false); //deactivates visibility
                 }
             }

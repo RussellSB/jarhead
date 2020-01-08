@@ -8,8 +8,6 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
     public GameObject pauseMenuUI;
 
-    public GameObject Input_selectController;
-
     // Update is called once per frame
     void Update()
     {

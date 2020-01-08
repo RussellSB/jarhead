@@ -41,7 +41,7 @@ public class Scrolling : MonoBehaviour
     void Update()
     {
 
-        if (parallaxEntity)
+        if (parallaxEntity && Input.GetAxisRaw("Horizontal") == 1)
         {
             float deltaX = player.transform.position.x - lastPlayerX;
             transform.position += Vector3.right * (deltaX * parallaxSpeed);
