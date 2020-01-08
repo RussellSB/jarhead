@@ -28,6 +28,12 @@ public class SelectController : MonoBehaviour
 
     private void Update()
     {
+        if (PauseMenu.isPaused)
+        {
+            Cursor.SetCursor(null, Vector2.zero, cursorMode);
+            return;
+        }
+
         Vector3 start = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(start, transform.forward, out hit))
