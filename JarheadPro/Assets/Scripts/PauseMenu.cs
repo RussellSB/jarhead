@@ -17,11 +17,9 @@ public class PauseMenu : MonoBehaviour
         {
             if (isPaused)
             {
-                Input_selectController.SetActive(true);
                 Resume();
             } else
             {
-                Input_selectController.SetActive(false);
                 Pause();
             }
         }
