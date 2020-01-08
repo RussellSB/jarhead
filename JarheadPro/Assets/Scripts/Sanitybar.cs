@@ -24,11 +24,11 @@ public class Sanitybar : MonoBehaviour
         emoticon = transform.Find("Emoticon").Find("emoticon").GetComponent<Image>();
 
         // Loads up the sprites
-        great = Resources.Load("great", typeof(Sprite)) as Sprite;
-        happy = Resources.Load("happy", typeof(Sprite)) as Sprite;
-        meh = Resources.Load("meh", typeof(Sprite)) as Sprite;
-        sad = Resources.Load("sad", typeof(Sprite)) as Sprite;
-        terrible = Resources.Load("terrible", typeof(Sprite)) as Sprite;
+        great = Resources.Load("great1", typeof(Sprite)) as Sprite;
+        happy = Resources.Load("happy1", typeof(Sprite)) as Sprite;
+        meh = Resources.Load("meh1", typeof(Sprite)) as Sprite;
+        sad = Resources.Load("sad1", typeof(Sprite)) as Sprite;
+        terrible = Resources.Load("terrible1", typeof(Sprite)) as Sprite;
 
         // Initialising the sanity
         sanity = new Sanity();
