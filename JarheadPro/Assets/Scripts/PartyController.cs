@@ -30,8 +30,8 @@ public class PartyController : MonoBehaviour
     public int currPopulation;
     private int prevPopulation;
 
-    public GameObject job;
-    public GameObject housing;
+    public GameObject jobObj;
+    public GameObject housingObj;
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +51,7 @@ public class PartyController : MonoBehaviour
         noteChanges();
         if (currPopulation > prevPopulation)
         {
-            decisionPoof();
+            decide();
             addTarget();
         }
         
@@ -70,31 +70,53 @@ public class PartyController : MonoBehaviour
     }
 
     // Poofs other related contrasting decision jarbuds if there are any
-    void decisionPoof()
+    void decide()
     {
-        if(partyJarbuds[partyJarbuds.Count-1].name.StartsWith("Job") && !job){
-            job = partyJarbuds[partyJarbuds.Count-1];
+        bool decided_job = partyJarbuds[partyJarbuds.Count - 1].name.StartsWith("Job") && !jobObj;
+        bool decided_housing = partyJarbuds[partyJarbuds.Count - 1].name.StartsWith("Housing") && !housingObj;
 
-            GameObject[] allJarbuds = GameObject.FindGameObjectsWithTag("Jarbud");
-            foreach(GameObject jarbud in allJarbuds)
-            {
-                if(jarbud.name.StartsWith("Job") && jarbud != job)
-                {
-                    jarbud.SetActive(false);
-                }
-            }
+        if (decided_job)
+        {
+            jobObj = partyJarbuds[partyJarbuds.Count - 1];
+            jobPoof();
+
+        }
+        else if (decided_housing)
+        {
+            housingObj = partyJarbuds[partyJarbuds.Count - 1];
+            housingPoof();
         }
 
-        if (partyJarbuds[partyJarbuds.Count-1].name.StartsWith("Housing") && !housing){
-            housing = partyJarbuds[partyJarbuds.Count-1];
+        if(decided_job || decided_housing)
+        {
+            StatEffect effect = StatEffect.Effects[jobObj.name];
+            Money.money += effect.moneyInstant;
+            Money.moneyOverTime += effect.money;
+            Sanity.Update(effect.sanityInstant);
+            Sanity.UpdateDecay(effect.sanity);
+        }
+    }
 
-            GameObject[] allJarbuds = GameObject.FindGameObjectsWithTag("Jarbud");
-            foreach (GameObject jarbud in allJarbuds)
+    void housingPoof()
+    {
+        GameObject[] allJarbuds = GameObject.FindGameObjectsWithTag("Jarbud");
+        foreach (GameObject jarbud in allJarbuds)
+        {
+            if (jarbud.name.StartsWith("Housing") && jarbud != housingObj)
             {
-                if (jarbud.name.StartsWith("Housing") && jarbud != housing)
-                {
-                    jarbud.SetActive(false);
-                }
+                jarbud.SetActive(false);
+            }
+        }
+    }
+
+    void jobPoof()
+    {
+        GameObject[] allJarbuds = GameObject.FindGameObjectsWithTag("Jarbud");
+        foreach (GameObject jarbud in allJarbuds)
+        {
+            if (jarbud.name.StartsWith("Job") && jarbud != jobObj)
+            {
+                jarbud.SetActive(false);
             }
         }
     }
@@ -197,5 +219,39 @@ public class PartyController : MonoBehaviour
             
             partyJarbuds[i].GetComponent<Transform>().Find("Jar").gameObject.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(velocity.x));
         }
+    }
+}
+
+class StatEffect
+{
+    public bool overTime = false;
+    public bool instant = false;
+
+    public float money;
+    public float sanity;
+
+    public float moneyInstant;
+    public float sanityInstant;
+
+    public static Dictionary<string, StatEffect> Effects = new Dictionary<string, StatEffect>()
+    {
+        { "JobProgrammer",  new StatEffect( 100, -0.20f,     0f,   0f) },
+        { "JobWaiter",      new StatEffect(  50, -0.50f,     0f,   0f) },
+        { "JobLawyer",      new StatEffect( 200, -2.00f,     0f,   0f) },
+        { "JobCashier",     new StatEffect(  50, -0.20f,     0f,   0f) },
+        { "JobDelivery1",   new StatEffect(  50, -0.50f,     0f,   0f) },
+        { "JobDelivery2",   new StatEffect( 200, -2.00f,     0f,   0f) },
+        { "JobConsultant",  new StatEffect(  75, -1.00f,     0f,   0f) },
+        { "HousingRental",  new StatEffect(-100, -1.00f,     0f,   0f) },
+        { "HousingReal",    new StatEffect(   0, -0.00f, -2000f, -20f) },
+    };
+
+    private StatEffect(float money, float sanity, float moneyInstant, float sanityInstant)
+    {
+        this.money = money / 1000;
+        this.sanity = sanity * 10;
+        this.moneyInstant = moneyInstant;
+        this.sanityInstant = sanityInstant;
+        overTime = true;
     }
 }

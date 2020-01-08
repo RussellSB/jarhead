@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Money : MonoBehaviour
 {
 
-    private static float money = 1000f;
+    public static float money = 1000f;
+    public static float moneyOverTime = 0f;
     public Text moneyText;
     private Sanitybar sanitybar;
 
@@ -20,22 +21,10 @@ public class Money : MonoBehaviour
     {
         if (!PauseMenu.isPaused)
         {
-            // For testing purposes
-            money -= (money / 1000);
-            if (money < 0)
-            {
-                money = 0;
-            }
-
-            // Updates the decay of sanity.
-            sanitybar.getSanity().setDecay((1 - (money / 1000f)) * 5);
+            // Update over time.
+            money += moneyOverTime;
         }
         // Formats the text output.
         moneyText.text = string.Format("{0:0.00}", money);
-    }
-
-    private void Change(float amount)
-    {
-        money += amount;
     }
 }

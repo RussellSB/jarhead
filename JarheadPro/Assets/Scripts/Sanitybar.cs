@@ -86,11 +86,13 @@ public class Sanity
     public const int SANITY_MAX = 100;
     public const int SANITY_MIN = 0;
     private static float sanity = SANITY_MAX;
-    private static float decay = 1f;
+    private static float base_decay = -0.5f;
+    private static float extra_decay = 0f;
 
     // Updates sanity per tick safely.
     public void Tick()
     {
+        float decay = base_decay + extra_decay;
         float amount = decay * Time.deltaTime;
         if (sanity - amount < SANITY_MIN)
         {
@@ -98,22 +100,31 @@ public class Sanity
         }
         else
         {
-            sanity -= amount;
+            sanity += amount;
         }
     }
 
     // Sets the sanity decay.
-    public void setDecay(float decay)
+    public static void SetBaseDecay(float base_decay)
     {
-        if(decay >= 0 && decay <= 100)
+        if(base_decay >= 0 && base_decay <= 100)
         {
-            Sanity.decay = decay;
+            Sanity.base_decay = base_decay;
         } 
+    }
+
+    // UpdateDecay
+    public static void UpdateDecay(float decay)
+    {
+        if (decay >= -100 && decay <= 100)
+        {
+            Sanity.extra_decay = decay;
+        }
     }
 
     // Updates sanity per the value passed safely.
     // Returns the updated sanity.
-    public float Update(float value)
+    public static float Update(float value)
     {
         if (sanity + value > SANITY_MAX)
         {
