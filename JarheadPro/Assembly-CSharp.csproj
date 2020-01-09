@@ -66,9 +66,11 @@
     <Compile Include="Assets\Scripts\DebugLocGlobal.cs" />
     <Compile Include="Assets\Scripts\EnviroFollow.cs" />
     <Compile Include="Assets\Scripts\InfoMenu.cs" />
+    <Compile Include="Assets\Scripts\IntervalController.cs" />
     <Compile Include="Assets\Scripts\MapJarbud.cs" />
     <Compile Include="Assets\Scripts\MapJarhead.cs" />
     <Compile Include="Assets\Scripts\Money.cs" />
+    <Compile Include="Assets\Scripts\Month.cs" />
     <Compile Include="Assets\Scripts\NetworkController.cs" />
     <Compile Include="Assets\Scripts\PartyController.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
