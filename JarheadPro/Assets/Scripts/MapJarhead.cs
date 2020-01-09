@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MapJarhead : MonoBehaviour
 {
+    public float displacementY = 13;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,6 @@ public class MapJarhead : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y + 13);
+        transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y + displacementY);
     }
 }

@@ -149,10 +149,9 @@ GameObject:
   - component: {fileID: 6074168912612435307}
   - component: {fileID: 2546689765324124035}
   - component: {fileID: 2546689765813159255}
-  - component: {fileID: 2546689765813159242}
   - component: {fileID: 8829288080132451078}
   m_Layer: 9
-  m_Name: Jarhead
+  m_Name: Colleague
   m_TagString: Jarhead
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,25 +202,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.5931296, y: 12.996199, z: 1}
   m_Center: {x: 0.03015256, y: 0.03013897, z: 0}
---- !u!95 &2546689765813159242
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6074168912612435308}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8829288080132451078
 MonoBehaviour:
   m_ObjectHideFlags: 0

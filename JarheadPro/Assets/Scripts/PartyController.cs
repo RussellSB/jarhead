@@ -79,22 +79,24 @@ public class PartyController : MonoBehaviour
         {
             jobObj = partyJarbuds[partyJarbuds.Count - 1];
             jobPoof();
+            addEffect(jobObj.name);
 
         }
         else if (decided_housing)
         {
             housingObj = partyJarbuds[partyJarbuds.Count - 1];
             housingPoof();
+            addEffect(housingObj.name);
         }
+    }
 
-        if(decided_job || decided_housing)
-        {
-            StatEffect effect = StatEffect.Effects[jobObj.name];
-            Money.money += effect.moneyInstant;
-            Money.moneyOverTime += effect.money;
-            Sanity.Update(effect.sanityInstant);
-            Sanity.UpdateDecay(effect.sanity);
-        }
+    void addEffect(string refName)
+    {
+        StatEffect effect = StatEffect.Effects[refName];
+        Money.money += effect.moneyInstant;
+        Money.moneyOverTime += effect.money;
+        Sanity.Update(effect.sanityInstant);
+        Sanity.UpdateDecay(effect.sanity);
     }
 
     void housingPoof()
