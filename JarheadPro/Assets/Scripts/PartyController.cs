@@ -80,7 +80,7 @@ public class PartyController : MonoBehaviour
         if (decided_job)
         {
             jobObj = partyJarbuds[partyJarbuds.Count - 1];
-            IntervalController.spawnBoss = true;
+            intervalController.GetComponent<IntervalController>().activateBoss(); // activate boss crowd
             jobPoof();
             addEffect(jobObj.name);
 
@@ -88,6 +88,7 @@ public class PartyController : MonoBehaviour
         else if (decided_housing)
         {
             housingObj = partyJarbuds[partyJarbuds.Count - 1];
+            //TODO: Activate housing spawning
             housingPoof();
             addEffect(housingObj.name);
         }

@@ -14,13 +14,11 @@ public class IntervalController : MonoBehaviour
     public static int intervalCount = 0;
 
     public GameObject Canvas;
+
     public GameObject BossCrowd;
     public GameObject Partner;
     public GameObject Child;
-
-    public static bool spawnBoss = false;
-    public static bool spawnChild = false;
-    public static bool spawnPartner = false;
+    public GameObject House;
 
     public static bool causeWorkplacePrompt = false;
     public static bool causePartnerPrompt = false;
@@ -77,5 +75,20 @@ public class IntervalController : MonoBehaviour
     public void spawnAll()
     {
         BossCrowd.transform.position = new Vector2(player.transform.position.x + intervalLength, 0);
+    }
+
+    public void activateBoss()
+    {
+        BossCrowd.SetActive(true);
+    }
+
+    public void activatePartner()
+    {
+
+    }
+
+    public void activateChild()
+    {
+
     }
 }
