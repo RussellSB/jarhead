@@ -22,6 +22,11 @@ public class IntervalController : MonoBehaviour
     public static bool spawnChild = false;
     public static bool spawnPartner = false;
 
+    public static bool causeWorkplacePrompt = false;
+    public static bool causePartnerPrompt = false;
+    public static bool causeChildPrompt = false;
+    public static bool causeOtherPrompt = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +34,10 @@ public class IntervalController : MonoBehaviour
         initPos = player.transform.position;
         prevX = player.transform.position.x;
         countdown = intervalLength;
+
+        spawnAll();
+
+        causeWorkplacePrompt = true;
     }
 
     // Update is called once per frame
@@ -45,6 +54,12 @@ public class IntervalController : MonoBehaviour
                 newInterval();
             }
 
+            if (causeWorkplacePrompt && (countdown <=  1 * intervalLength/4))
+            {
+                Canvas.GetComponent<DecisionPrompt>().Popup();
+                causeWorkplacePrompt = false;
+            }
+
             Debug.Log(displacementX + ", " + countdown + ", " + intervalCount);
         }
     }
@@ -53,12 +68,13 @@ public class IntervalController : MonoBehaviour
     {
         countdown = intervalLength;
         Canvas.GetComponent<MonthlyPrompt>().Popup();
-        intervalCount++;
 
-        if (spawnBoss) spawnBossAtEnd();
+        // Refer to Ok() in monthly prompt for more changes
+
+        causeWorkplacePrompt = true;
     }
 
-    public void spawnBossAtEnd()
+    public void spawnAll()
     {
         BossCrowd.transform.position = new Vector2(player.transform.position.x + intervalLength, 0);
     }

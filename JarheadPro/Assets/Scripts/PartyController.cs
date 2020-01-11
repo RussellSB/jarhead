@@ -80,7 +80,6 @@ public class PartyController : MonoBehaviour
         if (decided_job)
         {
             jobObj = partyJarbuds[partyJarbuds.Count - 1];
-            intervalController.GetComponent<IntervalController>().spawnBossAtEnd();
             IntervalController.spawnBoss = true;
             jobPoof();
             addEffect(jobObj.name);

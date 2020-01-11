@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 14;                         // Speed of player
+    public float speed = 7;                         // Speed of player
     public float acceleration = 75;                 // Acceleration when starting to walk
     public float deceleration = 70;                 // Deceleration when slowing down
-    private Vector3 velocity;                       // To store x and y velocity at the current update
+    public static Vector3 velocity;                       // To store x and y velocity at the current update
 
     private Animator animator;
     private SpriteRenderer srenderer;

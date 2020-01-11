@@ -5,6 +5,7 @@ using UnityEngine;
 public class MonthlyPrompt : MonoBehaviour
 {
     public GameObject monthlyPromptUI;
+    public GameObject intervalController;
 
     // Update is called once per frame
     void Update()
@@ -20,12 +21,15 @@ public class MonthlyPrompt : MonoBehaviour
         gameObject.GetComponent<PauseMenu>().enabled = true;
         monthlyPromptUI.SetActive(false);
         PauseMenu.isPaused = false;
+        intervalController.GetComponent<IntervalController>().spawnAll();
+        IntervalController.intervalCount++;
         Time.timeScale = 1f;
     }
 
     public void Popup()
     {
         gameObject.GetComponent<PauseMenu>().enabled = false;
+        PlayerController.velocity = Vector3.zero;
         monthlyPromptUI.SetActive(true);
         PauseMenu.isPaused = true;
         Time.timeScale = 0f;
