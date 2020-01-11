@@ -10,9 +10,17 @@ public class IntervalController : MonoBehaviour
     float displacementX;
 
     public float intervalLength = 100f;
-    public static float distanceTillNextCheckpoint;
+    public static float countdown;
     public static int intervalCount = 0;
 
+    public GameObject Canvas;
+    public GameObject BossCrowd;
+    public GameObject Partner;
+    public GameObject Child;
+
+    public static bool spawnBoss = false;
+    public static bool spawnChild = false;
+    public static bool spawnPartner = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,31 +28,38 @@ public class IntervalController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         initPos = player.transform.position;
         prevX = player.transform.position.x;
-
-        distanceTillNextCheckpoint = intervalLength;
+        countdown = intervalLength;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
         if(player.transform.position.x != prevX)
         {
             displacementX = player.transform.position.x - prevX;
-            distanceTillNextCheckpoint -= displacementX;
+            countdown -= displacementX;
             prevX = player.transform.position.x;
 
-            if (distanceTillNextCheckpoint <= 0)
+            if (countdown <= 0)
             {
-                distanceTillNextCheckpoint = intervalLength;
-                intervalCount++;
+                newInterval();
             }
 
-            //Debug.Log(displacementX + ", " + distanceTillNextCheckpoint + ", " + intervalCount);
+            Debug.Log(displacementX + ", " + countdown + ", " + intervalCount);
         }
+    }
 
+    void newInterval()
+    {
+        countdown = intervalLength;
+        Canvas.GetComponent<MonthlyPrompt>().Popup();
+        intervalCount++;
 
-       
+        if (spawnBoss) spawnBossAtEnd();
+    }
+
+    public void spawnBossAtEnd()
+    {
+        BossCrowd.transform.position = new Vector2(player.transform.position.x + intervalLength, 0);
     }
 }
