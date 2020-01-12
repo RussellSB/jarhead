@@ -9,9 +9,9 @@ public class IntervalController : MonoBehaviour
     float prevX;
     float displacementX;
 
-    public float intervalLength = 100f;
+    public float intervalLength;
     public static float countdown;
-    public static int intervalCount = 0;
+    public static int intervalCount = 1;
 
     public GameObject Canvas;
 
@@ -19,6 +19,10 @@ public class IntervalController : MonoBehaviour
     public GameObject Partner;
     public GameObject Child;
     public GameObject House;
+
+    private bool bossSeen = false;
+    private bool childSeen = false;
+    private bool partnerSeen = false;
 
     public static bool causeWorkplacePrompt = false;
     public static bool causePartnerPrompt = false;
@@ -34,8 +38,6 @@ public class IntervalController : MonoBehaviour
         countdown = intervalLength;
 
         spawnAll();
-
-        causeWorkplacePrompt = true;
     }
 
     // Update is called once per frame
@@ -47,48 +49,75 @@ public class IntervalController : MonoBehaviour
             countdown -= displacementX;
             prevX = player.transform.position.x;
 
-            if (countdown <= 0)
+            if (player.transform.position.x >= BossCrowd.transform.position.x) // make it to infront of boss
             {
-                newInterval();
+                Canvas.GetComponent<MonthlyPrompt>().Popup();
             }
 
-            if (causeWorkplacePrompt && (countdown <=  1 * intervalLength/4))
+            if (causePartnerPrompt && player.transform.position.x >= Partner.transform.position.x)
             {
                 Canvas.GetComponent<DecisionPrompt>().Popup();
-                causeWorkplacePrompt = false;
+                causePartnerPrompt = false;
             }
+
+            if (causeChildPrompt && player.transform.position.x >= Child.transform.position.x)
+            {
+                Canvas.GetComponent<DecisionPrompt>().Popup();
+                causeChildPrompt = false;
+            }
+
+            //if (causeWorkplacePrompt && (countdown <=  1 * intervalLength/4))
+            //{
+            //   Canvas.GetComponent<DecisionPrompt>().Popup();
+            //   causeWorkplacePrompt = false;
+            //}
 
             Debug.Log(displacementX + ", " + countdown + ", " + intervalCount);
         }
     }
 
-    void newInterval()
+    public void newInterval()
     {
         countdown = intervalLength;
-        Canvas.GetComponent<MonthlyPrompt>().Popup();
+        intervalCount++;
+        spawnAll();
 
-        // Refer to Ok() in monthly prompt for more changes
+        if (intervalCount == 3) activatePartner();
+        if (intervalCount == 6 && Partner.activeInHierarchy) activateChild();
 
-        causeWorkplacePrompt = true;
+        if (BossCrowd.activeInHierarchy) causeWorkplacePrompt = true;
+        if (Partner.activeInHierarchy) causePartnerPrompt = true;
+        if (Child.activeInHierarchy) causeChildPrompt = true;
     }
 
     public void spawnAll()
     {
         BossCrowd.transform.position = new Vector2(player.transform.position.x + intervalLength, 0);
+        Child.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2) + (intervalLength / 20), -17.5f);
+        Partner.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2) - (intervalLength / 20), -15f);
+        House.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2), -2.9f);
     }
 
     public void activateBoss()
     {
         BossCrowd.SetActive(true);
+        causeWorkplacePrompt = true;
+    }
+
+    public void activateHouse()
+    {
+        House.SetActive(true);
     }
 
     public void activatePartner()
     {
-
+        Partner.SetActive(true);
+        causePartnerPrompt = true;
     }
 
     public void activateChild()
     {
-
+        Child.SetActive(true);
+        causeChildPrompt = true;
     }
 }

@@ -59,7 +59,7 @@ public class SelectController : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     NetworkController.networkJarheads.Add(hitObject);
-                    hitObject.SetActive(false); //deactivates visibility
+                    //hitObject.SetActive(false); //deactivates visibility
                 }
             }
         }

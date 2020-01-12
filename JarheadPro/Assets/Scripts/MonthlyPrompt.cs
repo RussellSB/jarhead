@@ -19,10 +19,9 @@ public class MonthlyPrompt : MonoBehaviour
     public void Ok()
     {
         gameObject.GetComponent<PauseMenu>().enabled = true;
+        intervalController.GetComponent<IntervalController>().newInterval();
         monthlyPromptUI.SetActive(false);
         PauseMenu.isPaused = false;
-        intervalController.GetComponent<IntervalController>().spawnAll();
-        IntervalController.intervalCount++;
         Time.timeScale = 1f;
     }
 

@@ -88,7 +88,7 @@ public class PartyController : MonoBehaviour
         else if (decided_housing)
         {
             housingObj = partyJarbuds[partyJarbuds.Count - 1];
-            //TODO: Activate housing spawning
+            intervalController.GetComponent<IntervalController>().activateHouse(); // activate house
             housingPoof();
             addEffect(housingObj.name);
         }
