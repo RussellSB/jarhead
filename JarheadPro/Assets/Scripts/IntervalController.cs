@@ -108,14 +108,15 @@ public class IntervalController : MonoBehaviour
         Partner.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2) - (intervalLength / 20), -15f);
         House.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2), -2.9f);
 
-        // Without sprites, but still very appropriate due to parallaxing
-        Other.transform.position = new Vector2(player.transform.position.x + intervalLength/4, 0);
+        // Not jarhead
+        Other.transform.position = new Vector2(player.transform.position.x + intervalLength/4, -11.5f);
         Workplace.transform.position = new Vector2(player.transform.position.x + 3 * intervalLength / 4, 0);
     }
 
     public void activateBoss()
     {
         BossCrowd.SetActive(true);
+        Workplace.SetActive(true);
         causeWorkplacePrompt = true; // also activates workplace prompt
     }
 
