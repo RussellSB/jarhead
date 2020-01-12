@@ -16,18 +16,16 @@ public class IntervalController : MonoBehaviour
     public GameObject Canvas;
 
     public GameObject BossCrowd;
+    public GameObject Workplace;
     public GameObject Partner;
     public GameObject Child;
     public GameObject House;
-
-    private bool bossSeen = false;
-    private bool childSeen = false;
-    private bool partnerSeen = false;
+    public GameObject Other;
 
     public static bool causeWorkplacePrompt = false;
     public static bool causePartnerPrompt = false;
     public static bool causeChildPrompt = false;
-    public static bool causeOtherPrompt = false;
+    public static bool causeOtherPrompt = true;
 
     // Start is called before the first frame update
     void Start()
@@ -49,28 +47,39 @@ public class IntervalController : MonoBehaviour
             countdown -= displacementX;
             prevX = player.transform.position.x;
 
-            if (player.transform.position.x >= BossCrowd.transform.position.x) // make it to infront of boss
+            // At other
+            if (causeOtherPrompt && player.transform.position.x >= Other.transform.position.x)
             {
-                Canvas.GetComponent<MonthlyPrompt>().Popup();
+                Canvas.GetComponent<DecisionPrompt>().Popup();
+                causeOtherPrompt = false;
             }
 
+            // At partner
             if (causePartnerPrompt && player.transform.position.x >= Partner.transform.position.x)
             {
                 Canvas.GetComponent<DecisionPrompt>().Popup();
                 causePartnerPrompt = false;
             }
 
+            // At child
             if (causeChildPrompt && player.transform.position.x >= Child.transform.position.x)
             {
                 Canvas.GetComponent<DecisionPrompt>().Popup();
                 causeChildPrompt = false;
             }
 
-            //if (causeWorkplacePrompt && (countdown <=  1 * intervalLength/4))
-            //{
-            //   Canvas.GetComponent<DecisionPrompt>().Popup();
-            //   causeWorkplacePrompt = false;
-            //}
+            // At workplace
+            if (causeWorkplacePrompt && player.transform.position.x >= Workplace.transform.position.x)
+            {
+                Canvas.GetComponent<DecisionPrompt>().Popup();
+                causeWorkplacePrompt = false;
+            }
+
+            // At the end (boss)
+            if (player.transform.position.x >= BossCrowd.transform.position.x)
+            {
+                Canvas.GetComponent<MonthlyPrompt>().Popup();
+            }
 
             Debug.Log(displacementX + ", " + countdown + ", " + intervalCount);
         }
@@ -88,20 +97,26 @@ public class IntervalController : MonoBehaviour
         if (BossCrowd.activeInHierarchy) causeWorkplacePrompt = true;
         if (Partner.activeInHierarchy) causePartnerPrompt = true;
         if (Child.activeInHierarchy) causeChildPrompt = true;
+        causeOtherPrompt = true; // Always active
     }
 
     public void spawnAll()
     {
+        // With sprites
         BossCrowd.transform.position = new Vector2(player.transform.position.x + intervalLength, 0);
         Child.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2) + (intervalLength / 20), -17.5f);
         Partner.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2) - (intervalLength / 20), -15f);
         House.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2), -2.9f);
+
+        // Without sprites, but still very appropriate due to parallaxing
+        Other.transform.position = new Vector2(player.transform.position.x + intervalLength/4, 0);
+        Workplace.transform.position = new Vector2(player.transform.position.x + 3 * intervalLength / 4, 0);
     }
 
     public void activateBoss()
     {
         BossCrowd.SetActive(true);
-        causeWorkplacePrompt = true;
+        causeWorkplacePrompt = true; // also activates workplace prompt
     }
 
     public void activateHouse()
