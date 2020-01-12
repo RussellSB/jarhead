@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DecisionPrompt : MonoBehaviour
 {
     public GameObject decisionPromptUI;
+    public Text typeUI;
 
     public void option1()
     {
@@ -22,11 +24,13 @@ public class DecisionPrompt : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void Popup()
+    public void Popup(string type)
     {
         gameObject.GetComponent<PauseMenu>().enabled = false;
-        decisionPromptUI.SetActive(true);
         PauseMenu.isPaused = true;
         Time.timeScale = 0f;
+        
+        typeUI.text = type;
+        decisionPromptUI.SetActive(true);
     }
 }

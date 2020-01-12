@@ -29,6 +29,7 @@ public class MonthlyPrompt : MonoBehaviour
     {
         gameObject.GetComponent<PauseMenu>().enabled = false;
         PlayerController.velocity = Vector3.zero;
+
         monthlyPromptUI.SetActive(true);
         PauseMenu.isPaused = true;
         Time.timeScale = 0f;

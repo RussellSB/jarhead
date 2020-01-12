@@ -50,28 +50,28 @@ public class IntervalController : MonoBehaviour
             // At other
             if (causeOtherPrompt && player.transform.position.x >= Other.transform.position.x)
             {
-                Canvas.GetComponent<DecisionPrompt>().Popup();
+                Canvas.GetComponent<DecisionPrompt>().Popup("Other");
                 causeOtherPrompt = false;
             }
 
             // At partner
             if (causePartnerPrompt && player.transform.position.x >= Partner.transform.position.x)
             {
-                Canvas.GetComponent<DecisionPrompt>().Popup();
+                Canvas.GetComponent<DecisionPrompt>().Popup("Partner");
                 causePartnerPrompt = false;
             }
 
             // At child
             if (causeChildPrompt && player.transform.position.x >= Child.transform.position.x)
             {
-                Canvas.GetComponent<DecisionPrompt>().Popup();
+                Canvas.GetComponent<DecisionPrompt>().Popup("Child");
                 causeChildPrompt = false;
             }
 
             // At workplace
             if (causeWorkplacePrompt && player.transform.position.x >= Workplace.transform.position.x)
             {
-                Canvas.GetComponent<DecisionPrompt>().Popup();
+                Canvas.GetComponent<DecisionPrompt>().Popup("Work Place");
                 causeWorkplacePrompt = false;
             }
 
