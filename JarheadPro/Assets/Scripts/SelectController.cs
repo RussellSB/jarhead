@@ -18,14 +18,8 @@ public class SelectController : MonoBehaviour
         hotSpot = new Vector2(jarbudCursor.width / 2, jarbudCursor.height / 2);
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (PauseMenu.isPaused)
-        {
-            Cursor.SetCursor(null, Vector2.zero, cursorMode);
-            return;
-        }
-
         Vector3 start = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(start, transform.forward, out hit))
@@ -58,7 +52,7 @@ public class SelectController : MonoBehaviour
                 Cursor.SetCursor(jarheadCursor, hotSpot, cursorMode);
                 if (Input.GetMouseButtonDown(0))
                 {
-                    NetworkController.networkJarheads.Add(hitObject);
+                    //NetworkController.networkJarheads.Add(hitObject);
                     //dhitObject.SetActive(false); //deactivates visibility
                 }
             }

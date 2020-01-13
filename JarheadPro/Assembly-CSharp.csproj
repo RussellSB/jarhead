@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Camera2DFollow.cs" />
     <Compile Include="Assets\Scripts\DebugLocGlobal.cs" />
     <Compile Include="Assets\Scripts\DecisionPrompt.cs" />
+    <Compile Include="Assets\Scripts\DecisionScenario.cs" />
     <Compile Include="Assets\Scripts\EnviroFollow.cs" />
     <Compile Include="Assets\Scripts\InfoMenu.cs" />
     <Compile Include="Assets\Scripts\IntervalController.cs" />
@@ -104,6 +105,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Other\Decisions.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />

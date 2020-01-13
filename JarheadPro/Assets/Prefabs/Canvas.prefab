@@ -2548,6 +2548,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decisionPromptUI: {fileID: 717983560162800568}
+  typeUI: {fileID: 72319336106040778}
+  descriptionUI: {fileID: 346461668620366141}
+  option1UI: {fileID: 3029953706436585812}
+  option2UI: {fileID: 2991758845336870646}
 --- !u!1 &3228217763063951703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3379,10 +3383,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 30
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 85
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3390,7 +3394,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: YES
+  m_Text: Yes
 --- !u!1 &4432786989693205030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3456,10 +3460,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 585188cdc4600544eb408bee749e4b3a, type: 3}
-    m_FontSize: 30
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 85
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3467,7 +3471,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: NO
+  m_Text: No
 --- !u!1 &4532217494262287188
 GameObject:
   m_ObjectHideFlags: 0
