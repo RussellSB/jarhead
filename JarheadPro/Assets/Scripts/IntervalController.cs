@@ -97,13 +97,20 @@ public class IntervalController : MonoBehaviour
         intervalCount++;
         spawnAll();
 
-        if (intervalCount == 3) activatePartner();
-        if (intervalCount == 6 && Partner.activeInHierarchy) activateChild();
-
-        if (BossCrowd.activeInHierarchy) causeWorkplacePrompt = true;
-        if (Partner.activeInHierarchy) causePartnerPrompt = true;
-        if (Child.activeInHierarchy) causeChildPrompt = true;
+        // The prompts
         causeOtherPrompt = true; // Always active
+        if (BossCrowd.activeInHierarchy) causeWorkplacePrompt = true;
+
+        //The prompt for jarheads with decision to add to network
+        if (NetworkController.decided_partner) causePartnerPrompt = true;
+        else Partner.SetActive(false);
+
+        if (NetworkController.decided_child) causeChildPrompt = true;
+        else Child.SetActive(false);
+
+        // The special new jarheads
+        if (intervalCount == 2) Partner.SetActive(true);
+        if (intervalCount == 3 && NetworkController.decided_partner) Child.SetActive(true);
     }
 
     public void spawnAll()
@@ -134,13 +141,13 @@ public class IntervalController : MonoBehaviour
     public void activatePartner()
     {
         Partner.SetActive(true);
-        causePartnerPrompt = true;
+        //causePartnerPrompt = true; // Will be true on next interval of activation
     }
 
     public void activateChild()
     {
         Child.SetActive(true);
-        causeChildPrompt = true;
+        //causeChildPrompt = true; // Will be true on next interval of activation
     }
 
     void otherDecision()
@@ -199,7 +206,7 @@ public class IntervalController : MonoBehaviour
         partnerLibrary.Add(new DecisionScenario("You two have been planning this trip for a while now. Have you decided on going? ", false));
         partnerLibrary.Add(new DecisionScenario("Wow! Your partner found a new TV show that seems actually worth your time. Start a new TV Show together? ", true));
         partnerLibrary.Add(new DecisionScenario("Your partner is in the mood for games night. Play a board game together? ", true));
-        partnerLibrary.Add(new DecisionScenario("Your partner has been talking an awful lot about children recently. We know what that means...hopefully. Have a child?", false, true));
+        //partnerLibrary.Add(new DecisionScenario("Your partner has been talking an awful lot about children recently. We know what that means...hopefully. Have a child?", false, true));
     }
 
     void initChildLibrary()

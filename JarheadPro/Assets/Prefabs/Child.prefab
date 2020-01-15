@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 6612861836932520547}
   - {fileID: 5258902269047136254}
+  - {fileID: 4679787590772821934}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -232,3 +233,211 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac84aa26c8de7b44a65f6457bdbe267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &8896694369675226360
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3231889520462212385}
+    m_Modifications:
+    - target: {fileID: 4289285434468498217, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 9.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 263
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_text
+      value: 'A child is an extension of you. When you''ve finished walking through
+        life and you''re out of breathe, they''ll continue striding on for you, and
+        keep a part of your marathon running. Some say that raising a child isn''t
+        worth it. Others say there''s nothing greater. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_isTextTruncated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -89.448845
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528841, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_Name
+      value: infoBubble1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528855, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 15.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285435231095832, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285435579143718, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285435579143718, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285435579143718, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285435579143718, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777736, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777737, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777737, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777737, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777737, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777737, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_text
+      value: CHILD
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436199841587, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436461850538, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436503156952, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 856783db6527a7c43890422aabf1f8e6, type: 3}
+--- !u!4 &4679787590772821934 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 8896694369675226360}
+  m_PrefabAsset: {fileID: 0}

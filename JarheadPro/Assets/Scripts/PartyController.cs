@@ -47,7 +47,7 @@ public class PartyController : MonoBehaviour
         currCollPos = partyArea.position;
     }
 
-    // Fixed Update for physics
+    // Update for animation
     void Update()
     {
         noteChanges();
@@ -130,7 +130,7 @@ public class PartyController : MonoBehaviour
     // Adds a target to the partyAreaCollider
     void addTarget()
     {
-        Debug.Log("Added to party!");
+        //Debug.Log("Added to party!");
 
         int i = 0;
         do
@@ -142,7 +142,7 @@ public class PartyController : MonoBehaviour
             i++;
             if (i == 100)
             {
-                Debug.Log("As crowded as Malta...");
+                Debug.Log("As crowded as Malta... Can't add anymore!");
                 break;
             }
 

@@ -8,6 +8,13 @@ public class NetworkController : MonoBehaviour
 
     public int currPopulation;
     private int prevPopulation;
+    
+    public static bool decided_partner = false;
+    public static bool decided_child = false;
+    public GameObject PartnerObj;
+    public GameObject ChildObj;
+
+    public GameObject intervalController;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +27,30 @@ public class NetworkController : MonoBehaviour
     void Update()
     {
         noteChanges();
-        if (currPopulation > prevPopulation) Debug.Log("Added to network!");
+        if (currPopulation > prevPopulation)
+        {
+            decideNetwork();
+        } 
+    }
+
+    void decideNetwork()
+    {
+        bool decide_partner = networkJarheads[networkJarheads.Count - 1].name.Contains("Partner") && !PartnerObj;
+        bool decide_child = networkJarheads[networkJarheads.Count - 1].name.Contains("Child") && !ChildObj;
+
+        if (decide_child)
+        {
+            decided_child = true;
+            ChildObj = networkJarheads[networkJarheads.Count - 1];
+            intervalController.GetComponent<IntervalController>().activateChild(); // activate child
+        }
+
+        if (decide_partner)
+        {
+            decided_partner = true;
+            PartnerObj = networkJarheads[networkJarheads.Count - 1];
+            intervalController.GetComponent<IntervalController>().activatePartner(); // activate partner
+        }
     }
 
     // Notes previous and current observations

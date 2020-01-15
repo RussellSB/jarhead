@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\DecisionScenario.cs" />
     <Compile Include="Assets\Scripts\EnviroFollow.cs" />
     <Compile Include="Assets\Scripts\InfoMenu.cs" />
+    <Compile Include="Assets\Scripts\InfoMenu1.cs" />
     <Compile Include="Assets\Scripts\IntervalController.cs" />
     <Compile Include="Assets\Scripts\MapJarbud.cs" />
     <Compile Include="Assets\Scripts\MapJarhead.cs" />

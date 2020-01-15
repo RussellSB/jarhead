@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 8634825288512486145}
   - {fileID: 7272129035592662684}
+  - {fileID: 1574527718177883205}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -232,3 +233,201 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac84aa26c8de7b44a65f6457bdbe267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &3341463109452818195
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 56699003121962051}
+    m_Modifications:
+    - target: {fileID: 4289285434468498217, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 7.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 281
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_text
+      value: This is someone, who like you, seems to be walking through life. Both
+        of your suits are a little bit different, but they compliment each other.
+        You feel a little less bored, for the better and the worse. It's not that
+        simple getting into a relationship, but some say it's worth it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_isTextTruncated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -48.112297
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528841, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_Name
+      value: infoBubble1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434774528855, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 13.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285435231095832, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285435579143718, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285435579143718, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285435579143718, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285435579143718, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777736, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777737, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777737, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777737, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777737, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436146777737, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_text
+      value: PARTNER
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436199841587, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436461850538, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285436503156952, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 856783db6527a7c43890422aabf1f8e6, type: 3}
+--- !u!4 &1574527718177883205 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4289285434774528854, guid: 856783db6527a7c43890422aabf1f8e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 3341463109452818195}
+  m_PrefabAsset: {fileID: 0}

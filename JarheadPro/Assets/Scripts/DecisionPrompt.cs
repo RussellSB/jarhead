@@ -11,21 +11,38 @@ public class DecisionPrompt : MonoBehaviour
     public Text option1UI;
     public Text option2UI;
 
+    private bool isPrompted;
+
+    public void Update()
+    {
+        if (isPrompted)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                option1();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                option2();
+            }
+        }
+    }
+
     public void option1()
     {
         decisionPromptUI.SetActive(false);
-
-        gameObject.GetComponent<PauseMenu>().enabled = true;
         PauseMenu.isPaused = false;
+        gameObject.GetComponent<PauseMenu>().enabled = true;
+        isPrompted = false;
         Time.timeScale = 1f;
     }
 
     public void option2()
     {
         decisionPromptUI.SetActive(false);
-
+        PauseMenu.isPaused = false;
         gameObject.GetComponent<PauseMenu>().enabled = true;
-        //PauseMenu.isPaused = false;
+        isPrompted = false;
         Time.timeScale = 1f;
     }
 
@@ -39,9 +56,10 @@ public class DecisionPrompt : MonoBehaviour
         option2UI.text = option2;
 
         decisionPromptUI.SetActive(true);
+        isPrompted = true;
 
+        PauseMenu.isPaused = true;
         gameObject.GetComponent<PauseMenu>().enabled = false;
-        //PauseMenu.isPaused = true;
         Time.timeScale = 0f;
     }
 }

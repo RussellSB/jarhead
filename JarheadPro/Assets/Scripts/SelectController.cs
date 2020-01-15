@@ -18,8 +18,15 @@ public class SelectController : MonoBehaviour
         hotSpot = new Vector2(jarbudCursor.width / 2, jarbudCursor.height / 2);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
+        if (PauseMenu.isPaused)
+        {
+            Cursor.SetCursor(null, Vector2.zero, cursorMode);
+            return;
+        }
+
+
         Vector3 start = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(start, transform.forward, out hit))
@@ -44,17 +51,30 @@ public class SelectController : MonoBehaviour
                         animator.SetBool("Close", true);
                     }
                 }
-
-                
             }
             if (hitObject.tag == "Jarhead")
             {
                 Cursor.SetCursor(jarheadCursor, hotSpot, cursorMode);
+
                 if (Input.GetMouseButtonDown(0))
                 {
-                    //NetworkController.networkJarheads.Add(hitObject);
-                    //dhitObject.SetActive(false); //deactivates visibility
+                    GameObject infoBubble = hitObject.transform.Find("infoBubble1").gameObject;
+                    Animator animator = infoBubble.GetComponent<Animator>();
+                    if (animator.GetBool("Close"))
+                    {
+                        animator.SetBool("Close", false);
+                        animator.SetBool("Open", true);
+                    }
+                    else
+                    {
+                        animator.SetBool("Open", false);
+                        animator.SetBool("Close", true);
+                    }
                 }
+            }
+            if (hitObject.tag == "Untagged")
+            {
+                Cursor.SetCursor(null, Vector2.zero, cursorMode);
             }
         }
         else

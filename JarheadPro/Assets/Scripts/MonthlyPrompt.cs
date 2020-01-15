@@ -21,6 +21,7 @@ public class MonthlyPrompt : MonoBehaviour
         gameObject.GetComponent<PauseMenu>().enabled = true;
         intervalController.GetComponent<IntervalController>().newInterval();
         monthlyPromptUI.SetActive(false);
+        PauseMenu.isPaused = false;
         Time.timeScale = 1f;
     }
 
@@ -29,6 +30,7 @@ public class MonthlyPrompt : MonoBehaviour
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
         PlayerController.velocity = Vector3.zero;
         monthlyPromptUI.SetActive(true);
+        PauseMenu.isPaused = true;
         gameObject.GetComponent<PauseMenu>().enabled = false;
         Time.timeScale = 0f;
     }

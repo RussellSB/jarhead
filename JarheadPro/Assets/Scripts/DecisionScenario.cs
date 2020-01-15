@@ -1,7 +1,6 @@
 ﻿public class DecisionScenario
 {
     private string decision;
-    private bool isNew = true;
     public bool isRepeatable;
     private string option1;
     private string option2;
@@ -21,7 +20,7 @@
         this.decision = decision;
         option1 = "Yes";
         option2 = "No";
-        this.isChildDecision = true;
+        this.isChildDecision = isChildDesicion;
         this.isRepeatable = isRepeatable;
     }
 
@@ -35,7 +34,6 @@
 
     public string getDecision()
     {
-        this.isNew = false;
         return this.decision;
     }
 
