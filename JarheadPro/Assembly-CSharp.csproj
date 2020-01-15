@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\SelectController.cs" />
     <Compile Include="Assets\Scripts\StartMenu.cs" />
     <Compile Include="Assets\Scripts\Tiling.cs" />
+    <Compile Include="Assets\Scripts\Volume.cs" />
     <Compile Include="Assets\Shapes2D\Demos\DragCamera.cs" />
     <Compile Include="Assets\Shapes2D\Demos\Flappy Shapes\Bird.cs" />
     <Compile Include="Assets\Shapes2D\Demos\Flappy Shapes\Game.cs" />

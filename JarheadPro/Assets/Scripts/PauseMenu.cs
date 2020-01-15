@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -37,5 +38,11 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
     }
-    
+
+    public void Quit()
+    {
+        Application.Quit();
+        //TODO: Make it go to title screen, and reset all static variables
+    }
+
 }
