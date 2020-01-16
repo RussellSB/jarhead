@@ -38,6 +38,12 @@ public class StatController : MonoBehaviour
 
     public static void addEffect(string refname)
     {
+        if (!Effects.ContainsKey(refname))
+        {
+            Debug.LogError("Effect with the name of \"" + refname + "\" does not exist.");
+            return;
+        }
+
         StatEffect effect = Effects[refname];
         Money.money += effect.moneyInstant;
         Sanity.Update(effect.sanityInstant);
@@ -52,6 +58,15 @@ public class StatController : MonoBehaviour
 
     public static void removeEffect(string refname)
     {
+        if (!Effects.ContainsKey(refname))
+        {
+            Debug.LogError("Effect with the name of \"" + refname + "\" does not exist.");
+            return;
+        } else if(!monthlyMoneyEffect.ContainsKey(refname))
+        {
+            Debug.LogError("Effect with the name of \"" + refname + "\" is not active. Couldn't remove.");
+        }
+
         StatEffect effect = Effects[refname];
         // Removes the monthly money effect from the dictionary, if the effect has a money per month.
         if (effect.moneyPerMonth == 0f)
