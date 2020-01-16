@@ -10,6 +10,8 @@ public class DecisionPrompt : MonoBehaviour
     public Text descriptionUI;
     public Text option1UI;
     public Text option2UI;
+    private string option1ID;
+    private string option2ID;
 
     private bool isPrompted;
 
@@ -30,15 +32,18 @@ public class DecisionPrompt : MonoBehaviour
 
     public void option1()
     {
-        decisionPromptUI.SetActive(false);
-        PauseMenu.isPaused = false;
-        gameObject.GetComponent<PauseMenu>().enabled = true;
-        isPrompted = false;
-        Time.timeScale = 1f;
+        Chosen();
+        StatController.addEffect(option1ID);
     }
 
     public void option2()
     {
+        Chosen();
+        StatController.addEffect(option2ID);
+    }
+
+    private void Chosen()
+    {
         decisionPromptUI.SetActive(false);
         PauseMenu.isPaused = false;
         gameObject.GetComponent<PauseMenu>().enabled = true;
@@ -46,14 +51,17 @@ public class DecisionPrompt : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void Popup(string type, string description, string option1, string option2)
+    public void Popup(string type, DecisionScenario scenario)
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
 
         typeUI.text = type;
-        descriptionUI.text = description;
-        option1UI.text = option1;
-        option2UI.text = option2;
+        descriptionUI.text = scenario.getDecision();
+        option1UI.text = scenario.getOption1();
+        option2UI.text = scenario.getOption2();
+
+        option1ID = scenario.option1ID;
+        option2ID = scenario.option2ID;
 
         decisionPromptUI.SetActive(true);
         isPrompted = true;

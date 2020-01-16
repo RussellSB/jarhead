@@ -153,28 +153,28 @@ public class IntervalController : MonoBehaviour
     void otherDecision()
     {
         int i = Random.Range(0, otherLibrary.Count);
-        Canvas.GetComponent<DecisionPrompt>().Popup("Other", otherLibrary[i].getDecision(), otherLibrary[i].getOption1(), otherLibrary[i].getOption2());
+        Canvas.GetComponent<DecisionPrompt>().Popup("Other", otherLibrary[i]);
         if (!otherLibrary[i].isRepeatable) otherLibrary.RemoveAt(i);
     }
 
     void partnerDecision()
     {
         int i = Random.Range(0, partnerLibrary.Count);
-        Canvas.GetComponent<DecisionPrompt>().Popup("Partner", partnerLibrary[i].getDecision(), partnerLibrary[i].getOption1(), partnerLibrary[i].getOption2());
+        Canvas.GetComponent<DecisionPrompt>().Popup("Partner", partnerLibrary[i]);
         if (!partnerLibrary[i].isRepeatable) partnerLibrary.RemoveAt(i);
     }
 
     void childDecision()
     {
         int i = Random.Range(0, childLibrary.Count);
-        Canvas.GetComponent<DecisionPrompt>().Popup("Child", childLibrary[i].getDecision(), childLibrary[i].getOption1(), childLibrary[i].getOption2());
+        Canvas.GetComponent<DecisionPrompt>().Popup("Child", childLibrary[i]);
         if (!childLibrary[i].isRepeatable) childLibrary.RemoveAt(i);
     }
 
     void workplaceDecision()
     {
         int i = Random.Range(0, workplaceLibrary.Count);
-        Canvas.GetComponent<DecisionPrompt>().Popup("Work Place", workplaceLibrary[i].getDecision(), workplaceLibrary[i].getOption1(), workplaceLibrary[i].getOption2());
+        Canvas.GetComponent<DecisionPrompt>().Popup("Work Place", workplaceLibrary[i]);
         if (!workplaceLibrary[i].isRepeatable) workplaceLibrary.RemoveAt(i);
     }
 
@@ -186,48 +186,158 @@ public class IntervalController : MonoBehaviour
         initWorkplaceLibrary();
     }
 
+    /* TODO: UPDATE THESE LIBRARIES TO INCLUDE CHOICE ID'S FOR EACH CHOICE! */
+
     void initOtherLibrary()
     {
         otherLibrary = new List<DecisionScenario>();
-        otherLibrary.Add(new DecisionScenario("You read an article stating that passtimes are good way to maintain your overall mental well being. Will you start getting invested in one?", false));
-        otherLibrary.Add(new DecisionScenario("Your car broke down and needs to be fixed", "Fix it", "Let it be", true));
-        otherLibrary.Add(new DecisionScenario("Your house could really use some new furniture.", "Go buy", "Go sty", false));
-        otherLibrary.Add(new DecisionScenario("Your dishwasher just broke down. Will you buy a new one?", "Oof, fine", "No, sinktime", false));
-        otherLibrary.Add(new DecisionScenario("Your friend just had a bunch of puppies and offered you one. Will you take it?", false));
-        otherLibrary.Add(new DecisionScenario("You read an article stating that passtimes are good way to maintain your overall mental well being. Will you start getting invested in one?", false));
+        otherLibrary.Add(new DecisionScenario(
+            "You read an article stating that passtimes are good way to maintain your overall mental well being. Will you start getting invested in one?",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
+        otherLibrary.Add(new DecisionScenario(
+            "Your car broke down and needs to be fixed",
+            true,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER",
+            option1: "Fix it",
+            option2: "Let it be"));
+        otherLibrary.Add(new DecisionScenario(
+            "Your house could really use some new furniture.",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER",
+            option1: "Go buy",
+            option2: "Go sty"));
+        otherLibrary.Add(new DecisionScenario(
+            "Your dishwasher just broke down. Will you buy a new one?",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER",
+            option1: "Oof, fine",
+            option2: "No, sinktime"));
+        otherLibrary.Add(new DecisionScenario(
+            "Your friend just had a bunch of puppies and offered you one. Will you take it?",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
+        otherLibrary.Add(new DecisionScenario(
+            "You read an article stating that passtimes are good way to maintain your overall mental well being. Will you start getting invested in one?",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
   }
 
     void initPartnerLibrary()
     {
         partnerLibrary = new List<DecisionScenario>();
-        partnerLibrary.Add(new DecisionScenario("Your partner keeps hinting that you two should go out. Will you go out for dinner?", true));
-        partnerLibrary.Add(new DecisionScenario("It's Valentine's day...come on. Buy a gift?", false));
-        partnerLibrary.Add(new DecisionScenario("Your aniversary is coming up, you better start planning for it.", "Plan", "Nah", false));
-        partnerLibrary.Add(new DecisionScenario("You two have been planning this trip for a while now. Have you decided on going? ", false));
-        partnerLibrary.Add(new DecisionScenario("Wow! Your partner found a new TV show that seems actually worth your time. Start a new TV Show together? ", true));
-        partnerLibrary.Add(new DecisionScenario("Your partner is in the mood for games night. Play a board game together? ", true));
+        partnerLibrary.Add(new DecisionScenario(
+            "Your partner keeps hinting that you two should go out. Will you go out for dinner?",
+            true,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
+        partnerLibrary.Add(new DecisionScenario(
+            "It's Valentine's day...come on. Buy a gift?",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
+        partnerLibrary.Add(new DecisionScenario(
+            "Your aniversary is coming up, you better start planning for it.",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER",
+            option1: "Plan",
+            option2: "Nah"));
+        partnerLibrary.Add(new DecisionScenario(
+            "You two have been planning this trip for a while now. Have you decided on going? ",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
+        partnerLibrary.Add(new DecisionScenario(
+            "Wow! Your partner found a new TV show that seems actually worth your time. Start a new TV Show together? ",
+            true,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
+        partnerLibrary.Add(new DecisionScenario(
+            "Your partner is in the mood for games night. Play a board game together? ",
+            true,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
         //partnerLibrary.Add(new DecisionScenario("Your partner has been talking an awful lot about children recently. We know what that means...hopefully. Have a child?", false, true));
     }
 
     void initChildLibrary()
     {
         childLibrary = new List<DecisionScenario>();
-        childLibrary.Add(new DecisionScenario("Private schools are known to be better than public schools, albeit more expensive. What will you send your child to?", "Public", "Private", false));
-        childLibrary.Add(new DecisionScenario("Your child wants to buy a new video game. Will you buy it?", true));
-        childLibrary.Add(new DecisionScenario("The workload for homework keeps on growing. Your child is clearly struggling. Will you help?", true));
-        childLibrary.Add(new DecisionScenario("It's your child's birthday, and he's been eyeing that new toy for a while. Buy a gift??", false));
-        childLibrary.Add(new DecisionScenario("Your child's sick and needs medicine. Will you leave it up to nature or visit the pharmacy?", "Nature", "Pharmacy", true));
+        childLibrary.Add(new DecisionScenario(
+            "Private schools are known to be better than public schools, albeit more expensive. What will you send your child to?",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER",
+            option1: "Public",
+            option2: "Private"));
+        childLibrary.Add(new DecisionScenario(
+            "Your child wants to buy a new video game. Will you buy it?",
+            true,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
+        childLibrary.Add(new DecisionScenario(
+            "The workload for homework keeps on growing. Your child is clearly struggling. Will you help?",
+            true,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
+        childLibrary.Add(new DecisionScenario(
+            "It's your child's birthday, and he's been eyeing that new toy for a while. Buy a gift??",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER"));
+        childLibrary.Add(new DecisionScenario(
+            "Your child's sick and needs medicine. Will you leave it up to nature or visit the pharmacy?",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "CHOICE2ID_PLACEHOLDER",
+            option1: "Nature",
+            option2: "Pharmacy"));
     }
 
     void initWorkplaceLibrary()
     {
        workplaceLibrary = new List<DecisionScenario>();
-       workplaceLibrary.Add(new DecisionScenario("A senior employee decided to retire early from his post, and the boss chose you to take his place. Do you accept the promotion?", false));
-       workplaceLibrary.Add(new DecisionScenario("Your team is behind on a project and has decided to work overtime to manage. Will you stay and work?", true));
-       workplaceLibrary.Add(new DecisionScenario("The boss decided to have a work party. Let's hope he doesn't get cold feet. Are you Going?", true));
-       workplaceLibrary.Add(new DecisionScenario("Your boss was not happy with your previous report and wants you to redo it by its original deadline. Work overtime?", false));
-       workplaceLibrary.Add(new DecisionScenario("Your co-worker needs somebody to cover them while they deal with a situation with their family. Will you help?", false));
-       workplaceLibrary.Add(new DecisionScenario("The office decided to plan a going away party for a fellow employee. Will you go?", true));
-       workplaceLibrary.Add(new DecisionScenario("Your co-worker is having a hard time with medical problems, so everyone decided to give some money in order to help. Chip in?", false));
+       workplaceLibrary.Add(new DecisionScenario(
+           "A senior employee decided to retire early from his post, and the boss chose you to take his place. Do you accept the promotion?",
+           false,
+           "CHOICE1ID_PLACEHOLDER",
+           "CHOICE2ID_PLACEHOLDER"));
+       workplaceLibrary.Add(new DecisionScenario(
+           "Your team is behind on a project and has decided to work overtime to manage. Will you stay and work?",
+           true,
+           "CHOICE1ID_PLACEHOLDER",
+           "CHOICE2ID_PLACEHOLDER"));
+       workplaceLibrary.Add(new DecisionScenario(
+           "The boss decided to have a work party. Let's hope he doesn't get cold feet. Are you going?",
+           true,
+           "CHOICE1ID_PLACEHOLDER",
+           "CHOICE2ID_PLACEHOLDER"));
+       workplaceLibrary.Add(new DecisionScenario(
+           "Your boss was not happy with your previous report and wants you to redo it by its original deadline. Work overtime?",
+           false,
+           "CHOICE1ID_PLACEHOLDER",
+           "CHOICE2ID_PLACEHOLDER"));
+       workplaceLibrary.Add(new DecisionScenario(
+           "Your co-worker needs somebody to cover them while they deal with a situation with their family. Will you help?",
+           false,
+           "CHOICE1ID_PLACEHOLDER",
+           "CHOICE2ID_PLACEHOLDER"));
+       workplaceLibrary.Add(new DecisionScenario(
+           "The office decided to plan a going away party for a fellow employee. Will you go?",
+           true,
+           "CHOICE1ID_PLACEHOLDER",
+           "CHOICE2ID_PLACEHOLDER"));
+       workplaceLibrary.Add(new DecisionScenario(
+           "Your co-worker is having a hard time with medical problems, so everyone decided to give some money in order to help. Chip in?",
+           false,
+           "CHOICE1ID_PLACEHOLDER",
+           "CHOICE2ID_PLACEHOLDER"));
     }
 }

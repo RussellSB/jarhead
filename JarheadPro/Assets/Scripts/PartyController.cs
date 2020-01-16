@@ -82,7 +82,7 @@ public class PartyController : MonoBehaviour
             jobObj = partyJarbuds[partyJarbuds.Count - 1];
             intervalController.GetComponent<IntervalController>().activateBoss(); // activate boss crowd
             jobPoof();
-            addEffect(jobObj.name);
+            StatController.addEffect(jobObj.name);
 
         }
         else if (decided_housing)
@@ -90,17 +90,8 @@ public class PartyController : MonoBehaviour
             housingObj = partyJarbuds[partyJarbuds.Count - 1];
             intervalController.GetComponent<IntervalController>().activateHouse(); // activate house
             housingPoof();
-            addEffect(housingObj.name);
+            StatController.addEffect(housingObj.name);
         }
-    }
-
-    void addEffect(string refName)
-    {
-        StatEffect effect = StatEffect.Effects[refName];
-        Money.money += effect.moneyInstant;
-        Money.moneyOverTime += effect.money;
-        Sanity.Update(effect.sanityInstant);
-        Sanity.UpdateDecay(effect.sanity);
     }
 
     void housingPoof()
@@ -226,39 +217,5 @@ public class PartyController : MonoBehaviour
             
             partyJarbuds[i].GetComponent<Transform>().Find("Jar").gameObject.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(velocity.x + velocity.y));
         }
-    }
-}
-
-class StatEffect
-{
-    public bool overTime = false;
-    public bool instant = false;
-
-    public float money;
-    public float sanity;
-
-    public float moneyInstant;
-    public float sanityInstant;
-
-    public static Dictionary<string, StatEffect> Effects = new Dictionary<string, StatEffect>()
-    {
-        { "JobProgrammer",  new StatEffect( 100, -0.20f,     0f,   0f) },
-        { "JobWaiter",      new StatEffect(  50, -0.50f,     0f,   0f) },
-        { "JobLawyer",      new StatEffect( 200, -2.00f,     0f,   0f) },
-        { "JobCashier",     new StatEffect(  50, -0.20f,     0f,   0f) },
-        { "JobDelivery1",   new StatEffect(  50, -0.50f,     0f,   0f) },
-        { "JobDelivery2",   new StatEffect( 200, -2.00f,     0f,   0f) },
-        { "JobConsultant",  new StatEffect(  75, -1.00f,     0f,   0f) },
-        { "HousingRental",  new StatEffect(-100, -1.00f,     0f,   0f) },
-        { "HousingReal",    new StatEffect(   0, -0.00f, -2000f, -20f) },
-    };
-
-    private StatEffect(float money, float sanity, float moneyInstant, float sanityInstant)
-    {
-        this.money = money / 1000;
-        this.sanity = sanity * 10;
-        this.moneyInstant = moneyInstant;
-        this.sanityInstant = sanityInstant;
-        overTime = true;
     }
 }
