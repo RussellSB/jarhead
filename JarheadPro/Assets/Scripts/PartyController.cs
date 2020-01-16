@@ -82,7 +82,7 @@ public class PartyController : MonoBehaviour
             jobObj = partyJarbuds[partyJarbuds.Count - 1];
             intervalController.GetComponent<IntervalController>().activateBoss(); // activate boss crowd
             jobPoof();
-            StatController.addEffect(jobObj.name);
+            EffectController.addEffect(jobObj.name);
 
         }
         else if (decided_housing)
@@ -90,7 +90,7 @@ public class PartyController : MonoBehaviour
             housingObj = partyJarbuds[partyJarbuds.Count - 1];
             intervalController.GetComponent<IntervalController>().activateHouse(); // activate house
             housingPoof();
-            StatController.addEffect(housingObj.name);
+            EffectController.addEffect(housingObj.name);
         }
     }
 

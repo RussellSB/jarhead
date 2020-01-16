@@ -17,10 +17,12 @@ public class StatEffect {
     }
 }
 
-public class StatController : MonoBehaviour
+enum EffectType { Stat, Summon, Multi }
+
+public class EffectController : MonoBehaviour
 {
 
-    public static Dictionary<string, StatEffect> Effects = new Dictionary<string, StatEffect>() {
+    public static Dictionary<string, StatEffect> StatEffects = new Dictionary<string, StatEffect>() {
         // Job Effects
         { "JobProgrammer",  new StatEffect(moneyPerMonth:    100, sanityDecay:      -0.20f) },
         { "JobWaiter",      new StatEffect(moneyPerMonth:     50, sanityDecay:      -0.50f) },
@@ -36,29 +38,73 @@ public class StatController : MonoBehaviour
 
     public static Dictionary<string, float> monthlyMoneyEffect = new Dictionary<string, float>() { };
 
+    // A function used by multiple other scripts to add another active effect.
+    // This effect is generic over multiple possibilities, be it a Stat effect, or a summon, etc.
+    // The refname in this case must exist within the Dictionary. If it doesn't an error will be logged.
     public static void addEffect(string refname)
     {
-        if (!Effects.ContainsKey(refname))
+        switch (parseEffectType(refname))
+        {
+            case EffectType.Multi:
+                var effects = refname.Split('&');
+                foreach(string effect in effects)
+                {
+                    addEffect(effect);
+                }
+                break;
+            case EffectType.Stat:
+                AddStatEffect(refname); break;
+            case EffectType.Summon:
+                SummonJarbud(refname); break;
+        }
+    }
+
+    private static EffectType parseEffectType(string refname)
+    {
+        if (refname.IndexOf('&') != -1)
+        {
+            return EffectType.Multi;
+        } 
+        else if (refname.StartsWith("Summon-"))
+        {
+            return EffectType.Summon;
+        } 
+        else
+        {
+            return EffectType.Stat;
+        }
+    }
+
+    private static void SummonJarbud(string refname)
+    {
+        string jarname = refname.Substring(8, refname.Length - 8);
+        // PartyController.SummonJarbud(jarname) // INCOMPLETE
+    }
+
+    private static void AddStatEffect(string refname)
+    {
+        if (!StatEffects.ContainsKey(refname))
         {
             Debug.LogError("Effect with the name of \"" + refname + "\" does not exist.");
             return;
         }
 
-        StatEffect effect = Effects[refname];
+        StatEffect effect = StatEffects[refname];
         Money.money += effect.moneyInstant;
         Sanity.Update(effect.sanityInstant);
         Sanity.UpdateDecay(effect.sanityDecay);
 
         // Add the monthly money effect to the dictionary, if the effect has a money per month.
-        if(effect.moneyPerMonth == 0f)
+        if (effect.moneyPerMonth == 0f)
         {
             monthlyMoneyEffect.Add(refname, effect.moneyPerMonth);
         }
     }
 
+    // Removes an active effect using its ID.
     public static void removeEffect(string refname)
     {
-        if (!Effects.ContainsKey(refname))
+        if (!StatEffects.ContainsKey(refname))
         {
             Debug.LogError("Effect with the name of \"" + refname + "\" does not exist.");
             return;
@@ -67,7 +113,7 @@ public class StatController : MonoBehaviour
             Debug.LogError("Effect with the name of \"" + refname + "\" is not active. Couldn't remove.");
         }
 
-        StatEffect effect = Effects[refname];
+        StatEffect effect = StatEffects[refname];
         // Removes the monthly money effect from the dictionary, if the effect has a money per month.
         if (effect.moneyPerMonth == 0f)
         {

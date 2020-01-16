@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\DebugLocGlobal.cs" />
      <Compile Include="Assets\Scripts\DecisionPrompt.cs" />
      <Compile Include="Assets\Scripts\DecisionScenario.cs" />
+     <Compile Include="Assets\Scripts\EffectController.cs" />
      <Compile Include="Assets\Scripts\EnviroFollow.cs" />
      <Compile Include="Assets\Scripts\InfoMenu.cs" />
      <Compile Include="Assets\Scripts\InfoMenu1.cs" />
@@ -76,7 +77,6 @@
      <Compile Include="Assets\Scripts\Scrolling.cs" />
      <Compile Include="Assets\Scripts\SelectController.cs" />
      <Compile Include="Assets\Scripts\StartMenu.cs" />
-     <Compile Include="Assets\Scripts\StatController.cs" />
      <Compile Include="Assets\Scripts\Tiling.cs" />
      <Compile Include="Assets\Scripts\Volume.cs" />
      <Compile Include="Assets\Shapes2D\Demos\DragCamera.cs" />

@@ -20,7 +20,7 @@ public class MonthlyPrompt : MonoBehaviour
     {
         gameObject.GetComponent<PauseMenu>().enabled = true;
         intervalController.GetComponent<IntervalController>().newInterval();
-        StatController.updateMoneyMonthly();
+        EffectController.updateMoneyMonthly();
         monthlyPromptUI.SetActive(false);
         PauseMenu.isPaused = false;
         Time.timeScale = 1f;

@@ -33,13 +33,13 @@ public class DecisionPrompt : MonoBehaviour
     public void option1()
     {
         Chosen();
-        StatController.addEffect(option1ID);
+        EffectController.addEffect(option1ID);
     }
 
     public void option2()
     {
         Chosen();
-        StatController.addEffect(option2ID);
+        EffectController.addEffect(option2ID);
     }
 
     private void Chosen()
