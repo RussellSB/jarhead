@@ -186,8 +186,6 @@ public class IntervalController : MonoBehaviour
         initWorkplaceLibrary();
     }
 
-    /* TODO: UPDATE THESE LIBRARIES TO INCLUDE CHOICE ID'S FOR EACH CHOICE! */
-
     void initOtherLibrary()
     {
         otherLibrary = new List<DecisionScenario>();

@@ -34,6 +34,9 @@ public class EffectController : MonoBehaviour
         // Housing Effects                                                        
         { "HousingRental",  new StatEffect(moneyPerMonth:   -100, sanityDecay:      -1.00f) },
         { "HousingReal",    new StatEffect(moneyInstant:   -2000, sanityInstant:   -20.00f) },
+        // Decision Effects
+        { "CHOICE1ID_PLACEHOLDER",    new StatEffect(moneyInstant:   200, sanityInstant:   +20.00f) },
+        { "CHOICE2ID_PLACEHOLDER",    new StatEffect(moneyInstant:   200, sanityInstant:   +2.00f) }
     };
 
     public static Dictionary<string, float> monthlyMoneyEffect = new Dictionary<string, float>() { };
@@ -94,9 +97,12 @@ public class EffectController : MonoBehaviour
         Sanity.Update(effect.sanityInstant);
         Sanity.UpdateDecay(effect.sanityDecay);
 
+        //Debug.Log("MONEYPERMONTH0-" + effect.moneyPerMonth);
+
         // Add the monthly money effect to the dictionary, if the effect has a money per month.
-        if (effect.moneyPerMonth == 0f)
+        if (effect.moneyPerMonth != 0f)
         {
+            //Debug.Log("MONEYPERMONTH1-" + effect.moneyPerMonth);
             monthlyMoneyEffect.Add(refname, effect.moneyPerMonth);
         }
     }
@@ -123,10 +129,11 @@ public class EffectController : MonoBehaviour
 
     public static void updateMoneyMonthly()
     {
+        Debug.Log(Money.money);
         List<float> moneyFX = monthlyMoneyEffect.Values.ToList();
         foreach (var money in moneyFX)
         {
-            Money.money -= money;
+            Money.money += money;
         }
     }
 }
