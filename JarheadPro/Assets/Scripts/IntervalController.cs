@@ -150,6 +150,16 @@ public class IntervalController : MonoBehaviour
         //causeChildPrompt = true; // Will be true on next interval of activation
     }
 
+    public static void SummonJarbud(string jarname)
+    {
+        GameObject jarbud = GameObject.Find(jarname);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        jarbud.transform.position = new Vector3(player.transform.position.x + 42, -18, 0);
+        jarbud.GetComponent<Scrolling>().enabled = false;
+        PartyController.partyJarbuds.Add(jarbud);
+    }
+
     void otherDecision()
     {
         int i = Random.Range(0, otherLibrary.Count);
@@ -190,42 +200,13 @@ public class IntervalController : MonoBehaviour
     {
         otherLibrary = new List<DecisionScenario>();
         otherLibrary.Add(new DecisionScenario(
-            "You read an article stating that passtimes are good way to maintain your overall mental well being. Will you start getting invested in one?",
+            "You go to the supermarket. There's an offer to get Pringles 80% off, but you have to buy a year's worth of pringles. Are you in?",
             false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
-        otherLibrary.Add(new DecisionScenario(
-            "Your car broke down and needs to be fixed",
-            true,
-            "CHOICE1ID_PLACEHOLDER",
+            "Summon-EffectPringles",
             "CHOICE2ID_PLACEHOLDER",
-            option1: "Fix it",
-            option2: "Let it be"));
-        otherLibrary.Add(new DecisionScenario(
-            "Your house could really use some new furniture.",
-            false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER",
-            option1: "Go buy",
-            option2: "Go sty"));
-        otherLibrary.Add(new DecisionScenario(
-            "Your dishwasher just broke down. Will you buy a new one?",
-            false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER",
-            option1: "Oof, fine",
-            option2: "No, sinktime"));
-        otherLibrary.Add(new DecisionScenario(
-            "Your friend just had a bunch of puppies and offered you one. Will you take it?",
-            false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
-        otherLibrary.Add(new DecisionScenario(
-            "You read an article stating that passtimes are good way to maintain your overall mental well being. Will you start getting invested in one?",
-            false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
-  }
+            option1: "Sure",
+            option2: "Ew, no"));
+    }
 
     void initPartnerLibrary()
     {
@@ -262,7 +243,6 @@ public class IntervalController : MonoBehaviour
             true,
             "CHOICE1ID_PLACEHOLDER",
             "CHOICE2ID_PLACEHOLDER"));
-        //partnerLibrary.Add(new DecisionScenario("Your partner has been talking an awful lot about children recently. We know what that means...hopefully. Have a child?", false, true));
     }
 
     void initChildLibrary()

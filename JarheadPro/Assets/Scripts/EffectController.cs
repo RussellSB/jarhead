@@ -24,19 +24,25 @@ public class EffectController : MonoBehaviour
 
     public static Dictionary<string, StatEffect> StatEffects = new Dictionary<string, StatEffect>() {
         // Job Effects
-        { "JobProgrammer",  new StatEffect(moneyPerMonth:    100, sanityDecay:      -0.20f) },
+        { "JobProgrammer",  new StatEffect(moneyPerMonth:    200, sanityDecay:      -0.20f) },
         { "JobWaiter",      new StatEffect(moneyPerMonth:     50, sanityDecay:      -0.50f) },
         { "JobLawyer",      new StatEffect(moneyPerMonth:    200, sanityDecay:      -2.00f) },
         { "JobCashier",     new StatEffect(moneyPerMonth:     50, sanityDecay:      -0.20f) },
         { "JobDelivery1",   new StatEffect(moneyPerMonth:     50, sanityDecay:      -0.50f) },
         { "JobDelivery2",   new StatEffect(moneyPerMonth:    200, sanityDecay:      -2.00f) },
         { "JobConsultant",  new StatEffect(moneyPerMonth:     75, sanityDecay:      -1.00f) },
+
         // Housing Effects                                                        
         { "HousingRental",  new StatEffect(moneyPerMonth:   -100, sanityDecay:      -1.00f) },
-        { "HousingReal",    new StatEffect(moneyInstant:   -2000, sanityInstant:   -20.00f) },
+        { "HousingReal",    new StatEffect(moneyInstant:    -500, sanityInstant:   -20.00f) },
+
+        // Jarhead Effects
+        { "JarheadChild",  new StatEffect(moneyPerMonth:    -50, sanityDecay:      1.00f) },
+        { "JarheadPartner",  new StatEffect(moneyPerMonth:  -20, sanityDecay:      2.00f) },
+
         // Decision Effects
-        { "CHOICE1ID_PLACEHOLDER",    new StatEffect(moneyInstant:   200, sanityInstant:   +20.00f) },
-        { "CHOICE2ID_PLACEHOLDER",    new StatEffect(moneyInstant:   200, sanityInstant:   +2.00f) }
+        { "CHOICE1ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   +30.00f) },
+        { "CHOICE2ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   -30.00f) }
     };
 
     public static Dictionary<string, float> monthlyMoneyEffect = new Dictionary<string, float>() { };
@@ -80,8 +86,9 @@ public class EffectController : MonoBehaviour
 
     private static void SummonJarbud(string refname)
     {
-        string jarname = refname.Substring(8, refname.Length - 8);
-        // PartyController.SummonJarbud(jarname) // INCOMPLETE
+        string jarname = refname.Substring(7, refname.Length - 7);
+        Debug.Log("JARNAME==" + jarname);
+        IntervalController.SummonJarbud(jarname);
     }
 
     private static void AddStatEffect(string refname)
@@ -96,13 +103,11 @@ public class EffectController : MonoBehaviour
         Money.money += effect.moneyInstant;
         Sanity.Update(effect.sanityInstant);
         Sanity.UpdateDecay(effect.sanityDecay);
-
-        //Debug.Log("MONEYPERMONTH0-" + effect.moneyPerMonth);
+        
 
         // Add the monthly money effect to the dictionary, if the effect has a money per month.
         if (effect.moneyPerMonth != 0f)
         {
-            //Debug.Log("MONEYPERMONTH1-" + effect.moneyPerMonth);
             monthlyMoneyEffect.Add(refname, effect.moneyPerMonth);
         }
     }
@@ -129,11 +134,11 @@ public class EffectController : MonoBehaviour
 
     public static void updateMoneyMonthly()
     {
-        Debug.Log(Money.money);
+        //Debug.Log(Money.money);
         List<float> moneyFX = monthlyMoneyEffect.Values.ToList();
         foreach (var money in moneyFX)
         {
-            Money.money += money;
+            Money.money = Money.money + money;
         }
     }
 }

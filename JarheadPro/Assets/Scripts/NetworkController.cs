@@ -42,6 +42,7 @@ public class NetworkController : MonoBehaviour
         {
             decided_child = true;
             ChildObj = networkJarheads[networkJarheads.Count - 1];
+            EffectController.addEffect("JarheadChild");
             intervalController.GetComponent<IntervalController>().activateChild(); // activate child
         }
 
@@ -49,6 +50,7 @@ public class NetworkController : MonoBehaviour
         {
             decided_partner = true;
             PartnerObj = networkJarheads[networkJarheads.Count - 1];
+            EffectController.addEffect("JarheadPartner");
             intervalController.GetComponent<IntervalController>().activatePartner(); // activate partner
         }
     }
