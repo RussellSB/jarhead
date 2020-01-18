@@ -25,7 +25,7 @@ public class IntervalController : MonoBehaviour
     public static bool causeWorkplacePrompt = false;
     public static bool causePartnerPrompt = false;
     public static bool causeChildPrompt = false;
-    public static bool causeOtherPrompt = true;
+    public static bool causeOtherPrompt = true;    
 
     public static List<DecisionScenario> otherLibrary;
     public static List<DecisionScenario>  workplaceLibrary;
@@ -200,6 +200,37 @@ public class IntervalController : MonoBehaviour
     {
         otherLibrary = new List<DecisionScenario>();
         otherLibrary.Add(new DecisionScenario(
+            "Your car broke down and needs to be fixed. If you don't fix it, you'll have more time to overthink with all the distances you must then walk.",
+            true,
+            "CHOICE1ID_PLACEHOLDER",
+            "ProExistential",
+            option1: "Fix it",
+            option2: "Let it be"));
+        otherLibrary.Add(new DecisionScenario(
+            "You're already tired of your hold furniture. What do you think? Buy new furniture?",
+            true,
+            "CHOICE1ID_PLACEHOLDER",
+            "ProExistential",
+            option1: "Go buy",
+            option2: "Go sty"));
+        otherLibrary.Add(new DecisionScenario(
+            "Your dishwasher just broke down again! What are the odds, really. Will you buy a new one?",
+            true,
+            "CHOICE1ID_PLACEHOLDER",
+            "ProExistential",
+            option1: "Oof, fine",
+            option2: "No, sink-life"));
+        otherLibrary.Add(new DecisionScenario(
+            "Your friend just had a bunch of puppies and offered you one. You love puppies. Will you take it?",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "ProExistential"));
+        otherLibrary.Add(new DecisionScenario(
+            "You read an article stating that passtimes are good way to maintain your overall mental well being. Will you start getting invested in one?",
+            false,
+            "CHOICE1ID_PLACEHOLDER",
+            "ProExistential"));
+        otherLibrary.Add(new DecisionScenario(
             "You go to the supermarket. There's an offer to get Pringles 80% off, but you have to buy a year's worth of pringles. Are you in?",
             false,
             "Summon-EffectPringles",
@@ -212,37 +243,37 @@ public class IntervalController : MonoBehaviour
     {
         partnerLibrary = new List<DecisionScenario>();
         partnerLibrary.Add(new DecisionScenario(
-            "Your partner keeps hinting that you two should go out. Will you go out for dinner?",
+            "Your partner keeps on hinting that you two should go out. It's a special occasion! ... again. Will you go out for dinner?",
             true,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
+            "ProLover",
+            "AntiLover"));
         partnerLibrary.Add(new DecisionScenario(
-            "It's Valentine's day...come on. Buy a gift?",
+            "It's Valentine's day... A lot of other jarheads seem to be getting their partners gifts as grand gestures. Buy a gift?",
             false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
+             "ProLover",
+             "AntiLover"));
         partnerLibrary.Add(new DecisionScenario(
-            "Your aniversary is coming up, you better start planning for it.",
+            "Your anniversary is coming up. Your partner takes this quite seriously. What will you do?",
             false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER",
+            "ProLover",
+            "AntiLover",
             option1: "Plan",
-            option2: "Nah"));
+            option2: "Chill"));
         partnerLibrary.Add(new DecisionScenario(
-            "You two have been planning this trip for a while now. Have you decided on going? ",
+            "Your partner has been wanting to go on a particular trip outside Europe for a while now. Shall you book it, to surprise them? ",
             false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
+            "ProLover",
+            "AntiLover"));
         partnerLibrary.Add(new DecisionScenario(
             "Wow! Your partner found a new TV show that seems actually worth your time. Start a new TV Show together? ",
             true,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
+            "ProLover",
+            "AntiLover"));
         partnerLibrary.Add(new DecisionScenario(
             "Your partner is in the mood for games night. Play a board game together? ",
             true,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
+            "ProLover",
+            "AntiLover"));
     }
 
     void initChildLibrary()
@@ -251,71 +282,46 @@ public class IntervalController : MonoBehaviour
         childLibrary.Add(new DecisionScenario(
             "Private schools are known to be better than public schools, albeit more expensive. What will you send your child to?",
             false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER",
+            "ProParenting",
+            "AntiParenting",
             option1: "Public",
             option2: "Private"));
         childLibrary.Add(new DecisionScenario(
             "Your child wants to buy a new video game. Will you buy it?",
             true,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
+            "ProParenting",
+            "AntiParenting"));
         childLibrary.Add(new DecisionScenario(
             "The workload for homework keeps on growing. Your child is clearly struggling. Will you help?",
             true,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
+            "ProParenting",
+            "AntiParenting"));
         childLibrary.Add(new DecisionScenario(
             "It's your child's birthday, and he's been eyeing that new toy for a while. Buy a gift??",
             false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER"));
+            "ProParenting",
+            "AntiParenting"));
         childLibrary.Add(new DecisionScenario(
             "Your child's sick and needs medicine. Will you leave it up to nature or visit the pharmacy?",
             false,
-            "CHOICE1ID_PLACEHOLDER",
-            "CHOICE2ID_PLACEHOLDER",
-            option1: "Nature",
-            option2: "Pharmacy"));
+            "ProParenting",
+            "AntiParenting",
+            option1: "Pharmacy",
+            option2: "Nature"));
     }
 
     void initWorkplaceLibrary()
     {
        workplaceLibrary = new List<DecisionScenario>();
        workplaceLibrary.Add(new DecisionScenario(
-           "A senior employee decided to retire early from his post, and the boss chose you to take his place. Do you accept the promotion?",
-           false,
-           "CHOICE1ID_PLACEHOLDER",
-           "CHOICE2ID_PLACEHOLDER"));
-       workplaceLibrary.Add(new DecisionScenario(
            "Your team is behind on a project and has decided to work overtime to manage. Will you stay and work?",
            true,
-           "CHOICE1ID_PLACEHOLDER",
-           "CHOICE2ID_PLACEHOLDER"));
-       workplaceLibrary.Add(new DecisionScenario(
-           "The boss decided to have a work party. Let's hope he doesn't get cold feet. Are you going?",
-           true,
-           "CHOICE1ID_PLACEHOLDER",
+           "ProWork",
            "CHOICE2ID_PLACEHOLDER"));
        workplaceLibrary.Add(new DecisionScenario(
            "Your boss was not happy with your previous report and wants you to redo it by its original deadline. Work overtime?",
            false,
-           "CHOICE1ID_PLACEHOLDER",
-           "CHOICE2ID_PLACEHOLDER"));
-       workplaceLibrary.Add(new DecisionScenario(
-           "Your co-worker needs somebody to cover them while they deal with a situation with their family. Will you help?",
-           false,
-           "CHOICE1ID_PLACEHOLDER",
-           "CHOICE2ID_PLACEHOLDER"));
-       workplaceLibrary.Add(new DecisionScenario(
-           "The office decided to plan a going away party for a fellow employee. Will you go?",
-           true,
-           "CHOICE1ID_PLACEHOLDER",
-           "CHOICE2ID_PLACEHOLDER"));
-       workplaceLibrary.Add(new DecisionScenario(
-           "Your co-worker is having a hard time with medical problems, so everyone decided to give some money in order to help. Chip in?",
-           false,
-           "CHOICE1ID_PLACEHOLDER",
+           "ProWork",
            "CHOICE2ID_PLACEHOLDER"));
     }
 }

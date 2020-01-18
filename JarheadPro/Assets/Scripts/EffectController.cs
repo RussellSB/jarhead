@@ -9,11 +9,23 @@ public class StatEffect {
     public float moneyInstant;
     public float sanityInstant;
 
-    public StatEffect(float moneyPerMonth = 0, float sanityDecay = 0, float moneyInstant = 0, float sanityInstant = 0){
+    public int partnerImpact;
+    public int childImpact;
+    public int existentialImpact;
+    public int workImpact;
+
+    public StatEffect(float moneyPerMonth = 0, float sanityDecay = 0, float moneyInstant = 0, float sanityInstant = 0, 
+                        int partnerImpact = 0, int childImpact = 0, int workImpact = 0, int existentialImpact = 0)
+    {
         this.moneyPerMonth = moneyPerMonth;
         this.sanityDecay = sanityDecay;
         this.moneyInstant = moneyInstant;
         this.sanityInstant = sanityInstant;
+
+        this.partnerImpact = partnerImpact;
+        this.childImpact = childImpact;
+        this.workImpact = workImpact;
+        this.existentialImpact = existentialImpact;
     }
 }
 
@@ -21,6 +33,17 @@ enum EffectType { Stat, Summon, Multi }
 
 public class EffectController : MonoBehaviour
 {
+    public static int partnerCount = 0;
+    public static int childCount = 0;
+    public static int workCount = 0;
+    public static int existentialCount = 0;
+
+    public static bool partnerSummoned = false;
+    public static bool childSummoned = false;
+    public static bool existentialSummoned = false;
+    public static bool overtimeSummoned = false;
+
+    public static int impactThreshold = 2;
 
     public static Dictionary<string, StatEffect> StatEffects = new Dictionary<string, StatEffect>() {
         // Job Effects
@@ -42,7 +65,13 @@ public class EffectController : MonoBehaviour
 
         // Decision Effects
         { "CHOICE1ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   +30.00f) },
-        { "CHOICE2ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   -30.00f) }
+        { "CHOICE2ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   -30.00f) },
+        { "ProLover",        new StatEffect(partnerImpact:   1, sanityInstant:   +20.00f) },
+        { "AntiLover",       new StatEffect(partnerImpact:   -1, sanityInstant:   -20.00f) },
+        { "ProParenting",           new StatEffect(childImpact:   1, sanityInstant:   +20.00f) },
+        { "AntiParenting",          new StatEffect(childImpact:   -1, sanityInstant:   -20.00f) },
+        { "ProExistential",         new StatEffect(existentialImpact:   1, sanityInstant:   -40.00f) },
+        { "ProWork",                new StatEffect(workImpact:   1,     moneyInstant:   50, sanityInstant:   -20.00f) },
     };
 
     public static Dictionary<string, float> monthlyMoneyEffect = new Dictionary<string, float>() { };
@@ -103,12 +132,64 @@ public class EffectController : MonoBehaviour
         Money.money += effect.moneyInstant;
         Sanity.Update(effect.sanityInstant);
         Sanity.UpdateDecay(effect.sanityDecay);
-        
 
         // Add the monthly money effect to the dictionary, if the effect has a money per month.
         if (effect.moneyPerMonth != 0f)
         {
             monthlyMoneyEffect.Add(refname, effect.moneyPerMonth);
+        }
+
+        // Add the impact to child and partner respectively
+        partnerCount += effect.partnerImpact;
+        childCount += effect.childImpact;
+        workCount += effect.workImpact;
+        existentialCount += effect.existentialImpact;
+
+        // Check if summoning based on counts is triggered
+        if (!partnerSummoned)
+        {
+            if (partnerCount >= impactThreshold)
+            {
+                partnerSummoned = true;
+                addEffect("Summon-EffectHealthy");
+            }
+            if (partnerCount <= -impactThreshold)
+            {
+                partnerSummoned = true;
+                addEffect("Summon-EffectToxic");
+            }
+        }
+
+        if (!childSummoned)
+        {
+            if (childCount >= impactThreshold)
+            {
+                childSummoned = true;
+                addEffect("Summon-EffectLoved");
+            }
+            if (childCount <= -impactThreshold)
+            {
+                childSummoned = true;
+                addEffect("Summon-EffectNeglected");
+            }
+        }
+
+        if (!overtimeSummoned)
+        {
+            if (workCount >= impactThreshold)
+            {
+                overtimeSummoned = true;
+                addEffect("Summon-EffectOvertime");
+            }
+        }
+
+        if (!existentialSummoned)
+        {
+            if (existentialCount >= impactThreshold)
+            {
+                existentialSummoned = true;
+                addEffect("Summon-EffectExistentialism");
+            }
         }
     }
 
