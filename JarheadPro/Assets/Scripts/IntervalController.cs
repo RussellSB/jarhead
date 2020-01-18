@@ -99,54 +99,54 @@ public class IntervalController : MonoBehaviour
 
         // The prompts
         causeOtherPrompt = true; // Always active
-        if (BossCrowd.activeInHierarchy) causeWorkplacePrompt = true;
+        if (BossCrowd.transform.position.y == 0) causeWorkplacePrompt = true;
 
         //The prompt for jarheads with decision to add to network
         if (NetworkController.decided_partner) causePartnerPrompt = true;
-        else Partner.SetActive(false);
+        else Partner.transform.position = new Vector2(Partner.transform.position.x, 50f);
 
         if (NetworkController.decided_child) causeChildPrompt = true;
-        else Child.SetActive(false);
+        else Child.transform.position = new Vector2(Child.transform.position.x, 50f);
 
         // The special new jarheads
-        if (intervalCount == 2) Partner.SetActive(true);
-        if (intervalCount == 3 && NetworkController.decided_partner) Child.SetActive(true);
+        if (intervalCount == 2) Partner.transform.position = new Vector2(Partner.transform.position.x, -15f);
+        if (intervalCount == 3 && NetworkController.decided_partner) Child.transform.position = new Vector2(Child.transform.position.x, -17.5f);
     }
 
     public void spawnAll()
     {
-        // With sprites
-        BossCrowd.transform.position = new Vector2(player.transform.position.x + intervalLength, 0);
-        Child.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2) + (intervalLength / 20), -17.5f);
-        Partner.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2) - (intervalLength / 20), -15f);
-        House.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2), -2.9f);
+        // Jarhead sprites
+        BossCrowd.transform.position = new Vector2(player.transform.position.x + intervalLength, BossCrowd.transform.position.y);
+        Child.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2) + (intervalLength / 20), Child.transform.position.y);
+        Partner.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2) - (intervalLength / 20), Partner.transform.position.y);
 
-        // Not jarhead
+        // Other sprites
         Other.transform.position = new Vector2(player.transform.position.x + intervalLength/4, -11.5f);
-        Workplace.transform.position = new Vector2(player.transform.position.x + 3 * intervalLength / 4, 0);
+        House.transform.position = new Vector2(player.transform.position.x + (intervalLength / 2), House.transform.position.y);
+        Workplace.transform.position = new Vector2(player.transform.position.x + 3 * intervalLength / 4, Workplace.transform.position.y);
     }
 
     public void activateBoss()
     {
-        BossCrowd.SetActive(true);
-        Workplace.SetActive(true);
+        BossCrowd.transform.position = new Vector2(BossCrowd.transform.position.x, 0);
+        Workplace.transform.position = new Vector2(Workplace.transform.position.x, 0);
         causeWorkplacePrompt = true; // also activates workplace prompt
     }
 
     public void activateHouse()
     {
-        House.SetActive(true);
+        House.transform.position = new Vector2(House.transform.position.x, -2.9f);
     }
 
     public void activatePartner()
     {
-        Partner.SetActive(true);
+        Partner.transform.position = new Vector2(Partner.transform.position.x, -15f);
         //causePartnerPrompt = true; // Will be true on next interval of activation
     }
 
     public void activateChild()
     {
-        Child.SetActive(true);
+        Child.transform.position = new Vector2(Child.transform.position.x, -17.5f);
         //causeChildPrompt = true; // Will be true on next interval of activation
     }
 
@@ -155,7 +155,7 @@ public class IntervalController : MonoBehaviour
         GameObject jarbud = GameObject.Find(jarname);
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        jarbud.transform.position = new Vector3(player.transform.position.x + 42, -18, 0);
+        jarbud.transform.position = new Vector3(player.transform.position.x + 60, -18, 0);
         jarbud.GetComponent<Scrolling>().enabled = false;
         PartyController.partyJarbuds.Add(jarbud);
     }

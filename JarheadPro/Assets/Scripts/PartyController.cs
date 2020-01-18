@@ -145,7 +145,7 @@ public class PartyController : MonoBehaviour
     // Checks if there's a something at that point
     bool isOccupied()
     {
-        point3d = new Vector3(point2d.x, point2d.y, -10);
+        point3d = new Vector3(point2d.x, point2d.y, -100);
         RaycastHit hit;
         if (Physics.Raycast(point3d, transform.forward, out hit))
         {
