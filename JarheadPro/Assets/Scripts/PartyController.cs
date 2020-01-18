@@ -53,6 +53,7 @@ public class PartyController : MonoBehaviour
         noteChanges();
         if (currPopulation > prevPopulation)
         {
+            FindObjectOfType<SFXManager>().PlaySound("EntityAdd");
             decide();
             addTarget();
         }

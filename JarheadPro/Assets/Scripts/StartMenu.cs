@@ -19,4 +19,9 @@ public class StartMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Click()
+    {
+        FindObjectOfType<SFXManager>().PlaySound("Click");
+    }
 }

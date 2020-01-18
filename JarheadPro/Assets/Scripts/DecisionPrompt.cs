@@ -44,6 +44,7 @@ public class DecisionPrompt : MonoBehaviour
 
     private void Chosen()
     {
+        FindObjectOfType<SFXManager>().PlaySound("Click");
         decisionPromptUI.SetActive(false);
         PauseMenu.isPaused = false;
         gameObject.GetComponent<PauseMenu>().enabled = true;
@@ -54,6 +55,7 @@ public class DecisionPrompt : MonoBehaviour
     public void Popup(string type, DecisionScenario scenario)
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        FindObjectOfType<SFXManager>().PlaySound("DecisionPrompt");
 
         typeUI.text = type;
         descriptionUI.text = scenario.getDecision();

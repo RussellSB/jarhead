@@ -124,4 +124,9 @@ public class PlayerController : MonoBehaviour
             decVer();
         }
     }
+
+    void Step()
+    {
+        FindObjectOfType<SFXManager>().StepHeavy();
+    }
 }
