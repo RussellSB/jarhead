@@ -27,7 +27,7 @@ public class InfoMenu : MonoBehaviour
         PartyController.partyJarbuds.Add(grandparent);
 
         GameObject infoBubble = grandparent.transform.Find("infoBubble").gameObject;
-        FindObjectOfType<SFXManager>().PlaySound("Click");
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("Click");
         Animator animator = infoBubble.GetComponent<Animator>();
         animator.SetBool("Open", false);
         animator.SetBool("Close", true);

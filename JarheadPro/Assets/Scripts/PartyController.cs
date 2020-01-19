@@ -53,7 +53,7 @@ public class PartyController : MonoBehaviour
         noteChanges();
         if (currPopulation > prevPopulation)
         {
-            FindObjectOfType<SFXManager>().PlaySound("EntityAdd");
+            GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("EntityAdd");
             decide();
             addTarget();
         }
@@ -193,6 +193,7 @@ public class PartyController : MonoBehaviour
             Vector2 currTarget;
             Vector2 velocity;
 
+            // Future improvement: give them their own individual speed
             step = speed * Time.deltaTime;
             prevPos = partyJarbuds[i].GetComponent<Transform>().position;
             currTarget = partyTargets[i];

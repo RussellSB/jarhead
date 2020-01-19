@@ -6,11 +6,11 @@ public class InfoOpenClose : MonoBehaviour
 {
     public void Open()
     {
-        FindObjectOfType<SFXManager>().Open();
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("Open");
     }
 
     public void Close()
     {
-        FindObjectOfType<SFXManager>().Close();
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("Close");
     }
 }

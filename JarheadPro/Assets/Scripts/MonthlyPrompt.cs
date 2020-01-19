@@ -18,7 +18,7 @@ public class MonthlyPrompt : MonoBehaviour
 
     public void Ok()
     {
-        FindObjectOfType<SFXManager>().PlaySound("Click");
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("Click");
         gameObject.GetComponent<PauseMenu>().enabled = true;
         intervalController.GetComponent<IntervalController>().newInterval();
         EffectController.updateMoneyMonthly();
@@ -30,7 +30,7 @@ public class MonthlyPrompt : MonoBehaviour
     public void Popup()
     {
         Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
-        FindObjectOfType<SFXManager>().PlaySound("MonthlyPrompt");
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("MonthlyPrompt");
 
         PlayerController.velocity = Vector3.zero;
         monthlyPromptUI.SetActive(true);

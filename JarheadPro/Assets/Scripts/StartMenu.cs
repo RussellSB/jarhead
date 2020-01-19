@@ -22,6 +22,6 @@ public class StartMenu : MonoBehaviour
 
     public void Click()
     {
-        FindObjectOfType<SFXManager>().PlaySound("Click");
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("Click");
     }
 }

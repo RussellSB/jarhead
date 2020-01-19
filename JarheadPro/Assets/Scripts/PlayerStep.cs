@@ -6,6 +6,6 @@ public class PlayerStep : MonoBehaviour
 {
     void Step()
     {
-        FindObjectOfType<SFXManager>().StepHeavy();
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().StepHeavy();
     }
 }

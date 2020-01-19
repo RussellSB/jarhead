@@ -296,9 +296,6 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
-    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead/JarheadPro/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead/JarheadPro/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
     </Reference>
@@ -661,18 +658,6 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{0B8EA3DF-0491-3D03-A45F-46BF6E7D7536}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{153727C7-05DD-FA15-EAF7-149FE1CFD764}</Project>
-      <Name>AstarPathfindingProject</Name>
-    </ProjectReference>
-    <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{2240C16A-E834-E889-CE0D-1C43307A83FC}</Project>
-      <Name>PackageToolsEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{D2F7B9F4-78CA-8918-33E7-B2CCB93EA6BE}</Project>
-      <Name>AstarPathfindingProjectEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

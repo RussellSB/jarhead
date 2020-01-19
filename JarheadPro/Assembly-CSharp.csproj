@@ -340,9 +340,6 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>D:/WindowsFiles/ProgramFiles/Unity/Editor/2019.2.14f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
-    <Reference Include="Pathfinding.Ionic.Zip.Reduced">
-      <HintPath>D:/Artificial Intellige (BSc.)/3rd Year/1st Semester/web/jarhead/JarheadPro/Assets/AstarPathfindingProject/Plugins/DotNetZip/Pathfinding.Ionic.Zip.Reduced.dll</HintPath>
-    </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/WindowsFiles/ProgramFiles/Unity/Editor/2019.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
     </Reference>
@@ -697,20 +694,6 @@
     <Reference Include="Boo.Lang">
       <HintPath>D:/WindowsFiles/ProgramFiles/Unity/Editor/2019.2.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="AstarPathfindingProject.csproj">
-      <Project>{153727C7-05DD-FA15-EAF7-149FE1CFD764}</Project>
-      <Name>AstarPathfindingProject</Name>
-    </ProjectReference>
-    <ProjectReference Include="PackageToolsEditor.csproj">
-      <Project>{2240C16A-E834-E889-CE0D-1C43307A83FC}</Project>
-      <Name>PackageToolsEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="AstarPathfindingProjectEditor.csproj">
-      <Project>{D2F7B9F4-78CA-8918-33E7-B2CCB93EA6BE}</Project>
-      <Name>AstarPathfindingProjectEditor</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

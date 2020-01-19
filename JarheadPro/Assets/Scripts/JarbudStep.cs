@@ -6,6 +6,6 @@ public class JarbudStep : MonoBehaviour
 {
     void Step()
     {
-        FindObjectOfType<SFXManager>().StepLight();
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().StepLight();
     }
 }

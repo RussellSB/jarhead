@@ -141,14 +141,14 @@ public class IntervalController : MonoBehaviour
     public void activatePartner()
     {
         Partner.transform.position = new Vector2(Partner.transform.position.x, -15f);
-        FindObjectOfType<SFXManager>().PlaySound("Partner");
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("Partner");
         //causePartnerPrompt = true; // Will be true on next interval of activation
     }
 
     public void activateChild()
     {
         Child.transform.position = new Vector2(Child.transform.position.x, -17.5f);
-        FindObjectOfType<SFXManager>().PlaySound("Child");
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("Child");
         //causeChildPrompt = true; // Will be true on next interval of activation
     }
 
@@ -289,7 +289,7 @@ public class IntervalController : MonoBehaviour
             option1: "Public",
             option2: "Private"));
         childLibrary.Add(new DecisionScenario(
-            "Your child wants to buy a new video game. Will you buy it?",
+            "Your child wants you to buy them a new video game. Will you buy it?",
             true,
             "ProParenting",
             "AntiParenting"));

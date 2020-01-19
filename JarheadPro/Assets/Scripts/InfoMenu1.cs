@@ -26,7 +26,7 @@ public class InfoMenu1 : MonoBehaviour
         NetworkController.networkJarheads.Add(grandparent);
 
         GameObject infoBubble = grandparent.transform.Find("infoBubble1").gameObject;
-        FindObjectOfType<SFXManager>().PlaySound("Click");
+        GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("Click");
         Animator animator = infoBubble.GetComponent<Animator>();
         animator.SetBool("Open", false);
         animator.SetBool("Close", true);
