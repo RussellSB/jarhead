@@ -44,5 +44,21 @@ public class SFXManager : MonoBehaviour
         s.source.Play();
     }
 
+    public void Open()
+    {
+        float random = 1;
+        Sound s = Array.Find(sounds, sound => sound.name == "Open");
+        s.source.pitch = random;
+        s.source.Play();
+    }
+
+    public void Close()
+    {
+        float random = 1f;
+        Sound s = Array.Find(sounds, sound => sound.name == "Close");
+        s.source.pitch = random;
+        s.source.Play();
+    }
+
     //FindObjectOfType<SFXManager>().PlaySound("Click");
 }

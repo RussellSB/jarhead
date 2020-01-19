@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\EnviroFollow.cs" />
     <Compile Include="Assets\Scripts\InfoMenu.cs" />
     <Compile Include="Assets\Scripts\InfoMenu1.cs" />
+    <Compile Include="Assets\Scripts\InfoOpenClose.cs" />
     <Compile Include="Assets\Scripts\IntervalController.cs" />
     <Compile Include="Assets\Scripts\JarbudStep.cs" />
     <Compile Include="Assets\Scripts\MapJarbud.cs" />
