@@ -3138,7 +3138,7 @@ PrefabInstance:
     - target: {fileID: 2044777099889025448, guid: 2d0d6fa8496711641a803cf90fccb072,
         type: 3}
       propertyPath: offsetX
-      value: -3
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 2044777099889025449, guid: 2d0d6fa8496711641a803cf90fccb072,
         type: 3}
@@ -5965,6 +5965,11 @@ PrefabInstance:
       propertyPath: intervalController
       value: 
       objectReference: {fileID: 2021244110}
+    - target: {fileID: 5162417376342208052, guid: 6c3a3972f830528428c997dd8dcca109,
+        type: 3}
+      propertyPath: speed
+      value: 8.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5162417376664991233, guid: 6c3a3972f830528428c997dd8dcca109,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

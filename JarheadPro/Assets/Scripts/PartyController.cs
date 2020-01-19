@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PartyController : MonoBehaviour
 {
-    public float speed = 50;
+    public float speed = 1;
     private float step;
     
     public static List<GameObject> partyJarbuds;
