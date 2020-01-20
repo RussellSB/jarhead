@@ -83,11 +83,11 @@ public class Sanitybar : MonoBehaviour
 public class Sanity
 {
     // Maximum value for sanity.
-    public const int SANITY_MAX = 100;
+    public static int SANITY_MAX = 100;
     public const int SANITY_MIN = 0;
-    private static float sanity = SANITY_MAX;
-    private static float base_decay = -0.5f;
-    private static float extra_decay = 0f;
+    public static float sanity = SANITY_MAX;
+    public static float base_decay = -0.5f;
+    public static float extra_decay = 0f;
 
     // Updates sanity per tick safely.
     public void Tick()
@@ -131,47 +131,6 @@ public class Sanity
             sanity = SANITY_MAX;
         }
         else if (sanity + value < SANITY_MIN)
-        {
-            sanity = SANITY_MIN;
-        }
-        else
-        {
-            sanity += value;
-        }
-
-        return sanity;
-    }
-
-    // Gets the normalized sanity
-    public float GetSanityNormalized()
-    {
-        return sanity / (SANITY_MAX + Math.Abs(SANITY_MIN));
-    }
-}
-
-// Class that represents the sanity meter.
-// This one is the same as Sanity, but without the "decrease-over-time" functionality.
-public class SanityLegacy
-{
-    // Maximum value for sanity.
-    public const int SANITY_MAX = 100;
-    public const int SANITY_MIN = 0;
-    private float sanity;
-
-    public SanityLegacy()
-    {
-        sanity = SANITY_MAX;
-    }
-
-    // Updates sanity safely, keeping it within the bounds.
-    // Also returns the new sanity value.
-    public float Update(float value)
-    {
-        if(sanity + value > SANITY_MAX)
-        {
-            sanity = SANITY_MAX;
-        }
-        else if(sanity + value < SANITY_MIN)
         {
             sanity = SANITY_MIN;
         }

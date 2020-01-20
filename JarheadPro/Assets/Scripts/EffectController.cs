@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class StatEffect {
+public class StatEffect
+{
     public float moneyPerMonth;
     public float sanityDecay;
     public float moneyInstant;
@@ -14,7 +15,7 @@ public class StatEffect {
     public int existentialImpact;
     public int workImpact;
 
-    public StatEffect(float moneyPerMonth = 0, float sanityDecay = 0, float moneyInstant = 0, float sanityInstant = 0, 
+    public StatEffect(float moneyPerMonth = 0, float sanityDecay = 0, float moneyInstant = 0, float sanityInstant = 0,
                         int partnerImpact = 0, int childImpact = 0, int workImpact = 0, int existentialImpact = 0)
     {
         this.moneyPerMonth = moneyPerMonth;
@@ -47,31 +48,75 @@ public class EffectController : MonoBehaviour
 
     public static Dictionary<string, StatEffect> StatEffects = new Dictionary<string, StatEffect>() {
         // Job Effects
-        { "JobProgrammer",  new StatEffect(moneyPerMonth:    200, sanityDecay:      -0.20f) },
-        { "JobWaiter",      new StatEffect(moneyPerMonth:     50, sanityDecay:      -0.50f) },
-        { "JobLawyer",      new StatEffect(moneyPerMonth:    200, sanityDecay:      -2.00f) },
-        { "JobCashier",     new StatEffect(moneyPerMonth:     50, sanityDecay:      -0.20f) },
-        { "JobDelivery1",   new StatEffect(moneyPerMonth:     50, sanityDecay:      -0.50f) },
-        { "JobDelivery2",   new StatEffect(moneyPerMonth:    200, sanityDecay:      -2.00f) },
-        { "JobConsultant",  new StatEffect(moneyPerMonth:     75, sanityDecay:      -1.00f) },
+        { "JobProgrammer",  new StatEffect(moneyPerMonth:   2500) },
+        { "JobWaiter",      new StatEffect(moneyPerMonth:   1200) },
+        { "JobLawyer",      new StatEffect(moneyPerMonth:   2700) },
+        { "JobCashier",     new StatEffect(moneyPerMonth:   1200) },
+        { "JobDelivery1",   new StatEffect(moneyPerMonth:   1200) },
+        { "JobDelivery2",   new StatEffect(moneyPerMonth:   1200) },
+        { "JobConsultant",  new StatEffect(moneyPerMonth:   1200) },
+
+        // Job Promotion
+        { "ChildInternationalPrimarySchool", new StatEffect(moneyPerMonth: -600)},
+
+        // Clothes
+        { "Shoes", new StatEffect(moneyInstant: -80)},
+        { "Dresses", new StatEffect(moneyInstant: -35)},
+        { "Jeans", new StatEffect(moneyInstant: -55)},
 
         // Housing Effects                                                        
-        { "HousingRental",  new StatEffect(moneyPerMonth:   -100, sanityDecay:      -1.00f) },
-        { "HousingReal",    new StatEffect(moneyInstant:    -500, sanityInstant:   -20.00f) },
+        { "HousingRental",  new StatEffect(moneyPerMonth:  -1150, sanityDecay:      -1.00f) },
+        { "HousingReal",    new StatEffect(moneyInstant: -350000, sanityInstant:   -20.00f) },
 
         // Jarhead Effects
-        { "JarheadChild",  new StatEffect(moneyPerMonth:    -50, sanityDecay:      1.00f) },
         { "JarheadPartner",  new StatEffect(moneyPerMonth:  -20, sanityDecay:      2.00f) },
 
         // Decision Effects
         { "CHOICE1ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   +30.00f) },
         { "CHOICE2ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   -30.00f) },
-        { "ProLover",        new StatEffect(partnerImpact:   1, sanityInstant:   +20.00f) },
-        { "AntiLover",       new StatEffect(partnerImpact:   -1, sanityInstant:   -20.00f) },
+        { "ProLover",               new StatEffect(partnerImpact:   1, sanityInstant:   +20.00f) },
+        { "AntiLover",              new StatEffect(partnerImpact:   -1, sanityInstant:   -20.00f) },
         { "ProParenting",           new StatEffect(childImpact:   1, sanityInstant:   +20.00f) },
         { "AntiParenting",          new StatEffect(childImpact:   -1, sanityInstant:   -20.00f) },
         { "ProExistential",         new StatEffect(existentialImpact:   1, sanityInstant:   -40.00f) },
+
+        // Workplace Decisions
         { "ProWork",                new StatEffect(workImpact:   1,     moneyInstant:   50, sanityInstant:   -20.00f) },
+        { "WorkPromotionComputing",          new StatEffect(moneyPerMonth: 500, sanityInstant: -3, sanityDecay: -0.3f)},
+        { "WorkPromotionAverage",          new StatEffect(moneyPerMonth: 100, sanityInstant: 3, sanityDecay: -0.3f)},
+        { "WorkPromotionConsultant",          new StatEffect(moneyPerMonth: 200, sanityInstant: -3, sanityDecay: -0.3f)},
+        { "WorkPromotionLawyer",          new StatEffect(moneyPerMonth: 300, sanityInstant: -3, sanityDecay: -0.3f)},
+        { "TeamWorkOvertime",       new StatEffect(moneyPerMonth: 200, sanityInstant: -6)},
+        { "BossOfficeParty",        new StatEffect(moneyPerMonth: -100, sanityInstant: 3)},
+        { "RedoReportQuickly",      new StatEffect(moneyPerMonth: 200, sanityInstant: -6)},
+        { "EmployeeCover",          new StatEffect(moneyPerMonth: 200, sanityInstant: -6)},
+        { "GoingAwayParty",         new StatEffect(moneyPerMonth: -100, sanityInstant: 3)},
+        { "HelpEmployeePersonal",   new StatEffect(moneyPerMonth: -100, sanityInstant: 3)},
+
+        // Partner Decisions
+        { "NetflixAndChill",  new StatEffect(moneyInstant: -100, sanityInstant: 6)},
+        { "ValentinesDay",  new StatEffect(moneyInstant: -50, sanityInstant: 3) },
+        { "JarheadChild",  new StatEffect(moneyInstant: -1000, sanityInstant: 9, moneyPerMonth: 333) },
+        { "AnniversaryPlan",  new StatEffect(moneyInstant: -200, sanityInstant: 6) },
+        { "PartnerTripPlan",  new StatEffect(moneyInstant: -1000, sanityInstant: 9) },
+
+        // Child Decisions
+        { "ChildPrivate", new StatEffect(sanityInstant: 6, moneyPerMonth: -600) },
+        { "ChildBuyNewToys", new StatEffect(moneyInstant: -60, sanityInstant: 6) },
+        { "HelpChildHomework", new StatEffect(sanityInstant:-6) },
+        { "ChildToyBirthday", new StatEffect(moneyInstant: -60, sanityInstant: 6) },
+        { "ChildSickMedicine", new StatEffect(moneyPerMonth: -130, sanityInstant: 6) },
+
+        // Other Decisions
+        { "InvestPasstime", new StatEffect(moneyPerMonth: -30, sanityDecay: 0.1f) },
+        { "FixBrokenCar", new StatEffect(moneyInstant: -300, sanityInstant: 3) },
+        { "BuyNewFurniture", new StatEffect(moneyPerMonth: -250, sanityInstant: 6) },
+        { "BuyNewDishwasher", new StatEffect(moneyPerMonth: -250, sanityInstant: 6) },
+        { "TakePuppy", new StatEffect(moneyInstant: -60, sanityInstant: 3) },
+        { "TakeFriendIn", new StatEffect(sanityInstant: 6, moneyPerMonth: 200, sanityDecay: -0.3f) },
+
+        // Easter Egg Decisions
+        { "AvoidPringles", new StatEffect(sanityInstant: -100)}
     };
 
     public static Dictionary<string, float> monthlyMoneyEffect = new Dictionary<string, float>() { };
@@ -85,7 +130,7 @@ public class EffectController : MonoBehaviour
         {
             case EffectType.Multi:
                 var effects = refname.Split('&');
-                foreach(string effect in effects)
+                foreach (string effect in effects)
                 {
                     addEffect(effect);
                 }
@@ -102,11 +147,11 @@ public class EffectController : MonoBehaviour
         if (refname.IndexOf('&') != -1)
         {
             return EffectType.Multi;
-        } 
+        }
         else if (refname.StartsWith("Summon-"))
         {
             return EffectType.Summon;
-        } 
+        }
         else
         {
             return EffectType.Stat;
@@ -200,7 +245,8 @@ public class EffectController : MonoBehaviour
         {
             Debug.LogError("Effect with the name of \"" + refname + "\" does not exist.");
             return;
-        } else if(!monthlyMoneyEffect.ContainsKey(refname))
+        }
+        else if (!monthlyMoneyEffect.ContainsKey(refname))
         {
             Debug.LogError("Effect with the name of \"" + refname + "\" is not active. Couldn't remove.");
         }

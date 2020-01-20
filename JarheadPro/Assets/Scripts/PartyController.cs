@@ -36,10 +36,11 @@ public class PartyController : MonoBehaviour
     public GameObject intervalController;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         partyJarbuds = new List<GameObject>();
         partyTargets = new List<Vector2>();
+        //PartyController.partyJarbuds.Clear();
 
         partyArea = transform.Find("PartyArea");
         partyAreaCollider = partyArea.GetComponent<Collider>();

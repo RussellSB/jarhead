@@ -8,6 +8,7 @@ TagManager:
   - Jarhead
   - ForceField
   - SFX
+  - Music
   layers:
   - Default
   - TransparentFX
