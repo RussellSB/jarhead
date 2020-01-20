@@ -28,18 +28,18 @@ public class SFXManager : MonoBehaviour
 
     public void StepHeavy()
     {
-        float random = UnityEngine.Random.Range(0.75f, 1f);
+        float random = UnityEngine.Random.Range(0.5f, 1f);
         Sound s = Array.Find(sounds, sound => sound.name == "Step");
-        s.source.volume = 0.3f;
+        s.source.volume = 0.7f;
         s.source.pitch = random;
         s.source.Play();
     }
 
     public void StepLight()
     {
-        float random = UnityEngine.Random.Range(2.75f, 3f);
+        float random = UnityEngine.Random.Range(2.5f, 3f);
         Sound s = Array.Find(sounds, sound => sound.name == "Step");
-        s.source.volume = 0.075f;
+        s.source.volume = 0.1f;
         s.source.pitch = random;
         s.source.Play();
     }

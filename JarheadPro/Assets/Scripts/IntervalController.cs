@@ -235,14 +235,14 @@ public class IntervalController : MonoBehaviour
             option1: "Barkin' time",
             option2: "Goodbye, dog"));
         otherLibrary.Add(new DecisionScenario(
-            "You read an article stating that passtimes are good way to maintain your overall mental well being. Will you start getting invested in one?",
+            "You read an article stating that hobbies are a good way to maintain your overall mental well being. Will you try get a hobby?",
             false,
             "InvestPasstime",
             "ProExistential"));
         otherLibrary.Add(new DecisionScenario(
             "You go to the supermarket. There's an offer to get Pringles 80% off, but you have to buy a year's worth of pringles. Are you in?",
             false,
-            "Summon-EffectPringles",
+            "Summon-EffectPringles&BuyPringles",
             "AvoidPringles",
             option1: "Sure",
             option2: "No. (Wrong choice)"));
@@ -330,7 +330,7 @@ public class IntervalController : MonoBehaviour
         workplaceLibrary.Add(new DecisionScenario(
             "A senior employee decided to retire early from his post, and the boss chose you to take his place. Do you accept the promotion?",
             false,
-            "ProWork&WorkPromotionSOMESHIT",
+            "ProWork&WorkPromotionAverage",
             "CHOICE2ID_PLACEHOLDER"));
         workplaceLibrary.Add(new DecisionScenario(
             "Your team is behind on a project and has decided to work overtime to manage. Will you stay and work?",
@@ -340,7 +340,7 @@ public class IntervalController : MonoBehaviour
         workplaceLibrary.Add(new DecisionScenario(
            "The boss decided to have an office party. Going? (hope he doesn't get cold feet)",
            true,
-           "ProWork&BossOfficeParty",
+           "BossOfficeParty",
            "CHOICE2ID_PLACEHOLDER"));
         workplaceLibrary.Add(new DecisionScenario(
             "Your boss was not happy with your previous report and wants you to redo it by its original deadline. Work overtime?",
@@ -348,7 +348,7 @@ public class IntervalController : MonoBehaviour
             "ProWork&RedoReportQuickly",
             "CHOICE2ID_PLACEHOLDER"));
         workplaceLibrary.Add(new DecisionScenario(
-            "An employee needs someone to cover for him. Will you help?",
+            "An employee messed up. They're in trouble and needs someone to cover for them. Will you help?",
             true,
             "ProWork&EmployeeCover",
             "CHOICE2ID_PLACEHOLDER"));

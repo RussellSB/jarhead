@@ -62,7 +62,7 @@ public class EffectController : MonoBehaviour
         // Clothes
         { "Shoes", new StatEffect(moneyInstant: -80)},
         { "Dresses", new StatEffect(moneyInstant: -35)},
-        { "Jeans", new StatEffect(moneyInstant: -55)},
+        { "Jeans", new StatEffect(moneyInstant: -55)},        
 
         // Housing Effects                                                        
         { "HousingRental",  new StatEffect(moneyPerMonth:  -1150, sanityDecay:      -1.00f) },
@@ -72,8 +72,8 @@ public class EffectController : MonoBehaviour
         { "JarheadPartner",  new StatEffect(moneyPerMonth:  -20, sanityDecay:      2.00f) },
 
         // Decision Effects
-        { "CHOICE1ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   +30.00f) },
-        { "CHOICE2ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   -30.00f) },
+        { "CHOICE1ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   0f) },
+        { "CHOICE2ID_PLACEHOLDER",    new StatEffect(moneyInstant:   0, sanityInstant:   0f) },
         { "ProLover",               new StatEffect(partnerImpact:   1, sanityInstant:   +20.00f) },
         { "AntiLover",              new StatEffect(partnerImpact:   -1, sanityInstant:   -20.00f) },
         { "ProParenting",           new StatEffect(childImpact:   1, sanityInstant:   +20.00f) },
@@ -109,14 +109,15 @@ public class EffectController : MonoBehaviour
 
         // Other Decisions
         { "InvestPasstime", new StatEffect(moneyPerMonth: -30, sanityDecay: 0.1f) },
-        { "FixBrokenCar", new StatEffect(moneyInstant: -300, sanityInstant: 3) },
-        { "BuyNewFurniture", new StatEffect(moneyPerMonth: -250, sanityInstant: 6) },
-        { "BuyNewDishwasher", new StatEffect(moneyPerMonth: -250, sanityInstant: 6) },
+        { "FixBrokenCar", new StatEffect(moneyInstant: -600, sanityInstant: 3) },
+        { "BuyNewFurniture", new StatEffect(moneyInstant: -400, sanityInstant: 6) },
+        { "BuyNewDishwasher", new StatEffect(moneyInstant: -250, sanityInstant: 6) },
         { "TakePuppy", new StatEffect(moneyInstant: -60, sanityInstant: 3) },
         { "TakeFriendIn", new StatEffect(sanityInstant: 6, moneyPerMonth: 200, sanityDecay: -0.3f) },
 
         // Easter Egg Decisions
-        { "AvoidPringles", new StatEffect(sanityInstant: -100)}
+        { "AvoidPringles", new StatEffect(sanityInstant: -50)},
+        { "BuyPringles", new StatEffect(moneyInstant: -900)}
     };
 
     public static Dictionary<string, float> monthlyMoneyEffect = new Dictionary<string, float>() { };
@@ -161,7 +162,7 @@ public class EffectController : MonoBehaviour
     private static void SummonJarbud(string refname)
     {
         string jarname = refname.Substring(7, refname.Length - 7);
-        Debug.Log("JARNAME==" + jarname);
+        //Debug.Log("JARNAME==" + jarname);
         IntervalController.SummonJarbud(jarname);
     }
 
@@ -252,7 +253,7 @@ public class EffectController : MonoBehaviour
         }
 
         StatEffect effect = StatEffects[refname];
-        // Removes the monthly money effect from the dictionary, if the effect has a money per month.
+        // Removes the monthly money effect from the dictionary, if the effect has no money per month.
         if (effect.moneyPerMonth == 0f)
         {
             monthlyMoneyEffect.Remove(refname);

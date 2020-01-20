@@ -16,6 +16,6 @@ public class Month : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        month.text = string.Format("{0:0}", IntervalController.intervalCount);
+        month.text = "Month: " + IntervalController.intervalCount;
     }
 }
