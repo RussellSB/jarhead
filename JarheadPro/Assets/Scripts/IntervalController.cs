@@ -32,6 +32,9 @@ public class IntervalController : MonoBehaviour
     public static List<DecisionScenario> partnerLibrary;
     public static List<DecisionScenario> childLibrary;
 
+    public static float income;
+    public static float expense;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -44,6 +47,9 @@ public class IntervalController : MonoBehaviour
         initPos = player.transform.position;
         prevX = player.transform.position.x;
         countdown = intervalLength;
+
+        income = 0;
+        expense = 0;
 
         initDecisionLibraries();
         spawnAll();
@@ -116,6 +122,9 @@ public class IntervalController : MonoBehaviour
         // The special new jarheads
         if (intervalCount == 2) Partner.transform.position = new Vector2(Partner.transform.position.x, -15f);
         if (intervalCount == 3 && NetworkController.decided_partner) Child.transform.position = new Vector2(Child.transform.position.x, -17.5f);
+
+        Debug.Log("Expense: " + expense);
+        Debug.Log("Income: " + income);
     }
 
     public void spawnAll()

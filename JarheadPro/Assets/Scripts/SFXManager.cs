@@ -30,7 +30,7 @@ public class SFXManager : MonoBehaviour
     {
         float random = UnityEngine.Random.Range(0.5f, 1f);
         Sound s = Array.Find(sounds, sound => sound.name == "Step");
-        s.source.volume = 0.7f;
+        s.source.volume = 0.5f;
         s.source.pitch = random;
         s.source.Play();
     }

@@ -6,6 +6,7 @@ using System.Linq;
 public class StatEffect
 {
     public float moneyPerMonth;
+
     public float sanityDecay;
     public float moneyInstant;
     public float sanityInstant;
@@ -51,10 +52,10 @@ public class EffectController : MonoBehaviour
         { "JobProgrammer",  new StatEffect(moneyPerMonth:   2500) },
         { "JobWaiter",      new StatEffect(moneyPerMonth:   1200) },
         { "JobLawyer",      new StatEffect(moneyPerMonth:   2700) },
-        { "JobCashier",     new StatEffect(moneyPerMonth:   1200) },
+        { "JobCashier",     new StatEffect(moneyPerMonth:   1155) },
         { "JobDelivery1",   new StatEffect(moneyPerMonth:   1200) },
-        { "JobDelivery2",   new StatEffect(moneyPerMonth:   1200) },
-        { "JobConsultant",  new StatEffect(moneyPerMonth:   1200) },
+        { "JobDelivery2",   new StatEffect(moneyPerMonth:   1250) },
+        { "JobConsultant",  new StatEffect(moneyPerMonth:   2421) },
 
         // Job Promotion
         { "ChildInternationalPrimarySchool", new StatEffect(moneyPerMonth: -600)},
@@ -183,6 +184,10 @@ public class EffectController : MonoBehaviour
         if (effect.moneyPerMonth != 0f)
         {
             monthlyMoneyEffect.Add(refname, effect.moneyPerMonth);
+
+            // Check if monthly expense or income, then add
+            if (effect.moneyPerMonth > 0) IntervalController.income += effect.moneyPerMonth;
+            else if (effect.moneyPerMonth < 0) IntervalController.expense -= effect.moneyPerMonth;
         }
 
         // Add the impact to child and partner respectively
