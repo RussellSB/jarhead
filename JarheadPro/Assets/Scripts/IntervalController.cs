@@ -268,13 +268,6 @@ public class IntervalController : MonoBehaviour
              "ProLover&ValentinesDay",
              "AntiLover"));
         partnerLibrary.Add(new DecisionScenario(
-            "Your anniversary is coming up. Your partner takes this quite seriously. What will you do?",
-            false,
-            "ProLover&JarheadChild",
-            "AntiLover",
-            option1: "Plan",
-            option2: "Chill"));
-        partnerLibrary.Add(new DecisionScenario(
             "Your partner has been wanting to go on a particular trip outside Europe for a while now. Shall you book it, to surprise them? ",
             false,
             "ProLover&PartnerTripPlan",
@@ -290,10 +283,12 @@ public class IntervalController : MonoBehaviour
             "ProLover",
             "AntiLover"));
         partnerLibrary.Add(new DecisionScenario(
-            "Your aniversary is coming, better start planning for it. (Plan or not)",
+            "Your anniversary is coming up. Your partner takes this quite seriously. What will you do?",
             true,
-            "ProLover&anniversaryPlan",
-            "AntiLover"));
+            "ProLover&AnniversaryPlan",
+            "AntiLover",
+            option1: "Plan",
+            option2: "Chill"));
     }
 
     void initChildLibrary()

@@ -96,12 +96,12 @@ public class EffectController : MonoBehaviour
         { "WorkPromotionAverage",          new StatEffect(moneyPerMonth: 100, sanityInstant: 3, sanityDecay: -0.3f)},
         { "WorkPromotionConsultant",          new StatEffect(moneyPerMonth: 200, sanityInstant: -3, sanityDecay: -0.3f)},
         { "WorkPromotionLawyer",          new StatEffect(moneyPerMonth: 300, sanityInstant: -3, sanityDecay: -0.3f)},
-        { "TeamWorkOvertime",       new StatEffect(moneyPerMonth: 200, sanityInstant: -6)},
+        { "TeamWorkOvertime",       new StatEffect(moneyPerMonth: 100, sanityInstant: -6)},
         { "BossOfficeParty",        new StatEffect(moneyInstant: -100, sanityInstant: 3)},
-        { "RedoReportQuickly",      new StatEffect(moneyPerMonth: 200, sanityInstant: -6)},
-        { "EmployeeCover",          new StatEffect(moneyPerMonth: 200, sanityInstant: -6)},
-        { "GoingAwayParty",         new StatEffect(moneyInstant: -100, sanityInstant: 3)},
-        { "HelpEmployeePersonal",   new StatEffect(moneyInstant: -200, sanityInstant: 3)},
+        { "RedoReportQuickly",      new StatEffect(moneyPerMonth: 100, sanityInstant: -6)},
+        { "EmployeeCover",          new StatEffect(moneyPerMonth: 100, sanityInstant: -6)},
+        { "GoingAwayParty",         new StatEffect(moneyInstant: -20, sanityInstant: 3)},
+        { "HelpEmployeePersonal",   new StatEffect(moneyInstant: -50, sanityInstant: 3)},
 
         // Partner Decisions
         { "NetflixAndChill",  new StatEffect(moneyInstant: -100, sanityInstant: 6)},
@@ -118,9 +118,9 @@ public class EffectController : MonoBehaviour
         { "ChildSickMedicine", new StatEffect(moneyPerMonth: -130, sanityInstant: 6) },
 
         // Other Decisions
-        { "InvestPasstime", new StatEffect(moneyPerMonth: -30, sanityDecay: 0.1f) },
-        { "FixBrokenCar", new StatEffect(moneyInstant: -600, sanityInstant: 3) },
-        { "BuyNewFurniture", new StatEffect(moneyInstant: -400, sanityInstant: 6) },
+        { "InvestPasstime", new StatEffect(moneyPerMonth: -30, sanityDecay: 0.5f) },
+        { "FixBrokenCar", new StatEffect(moneyInstant: -500, sanityInstant: 3) },
+        { "BuyNewFurniture", new StatEffect(moneyInstant: -200, sanityInstant: 6) },
         { "BuyNewDishwasher", new StatEffect(moneyInstant: -250, sanityInstant: 6) },
         { "TakePuppy", new StatEffect(moneyInstant: -60, sanityInstant: 3) },
         { "TakeFriendIn", new StatEffect(sanityInstant: 6, moneyPerMonth: 200, sanityDecay: -0.3f) },
