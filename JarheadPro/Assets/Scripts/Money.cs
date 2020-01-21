@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Money : MonoBehaviour
 {
 
-    public static float money = 1000f;
-    public static float moneyOverTime = 0f;
+    public static float money;
+    public static float moneyOverTime;
     public Text moneyText;
     private Sanitybar sanitybar;
 

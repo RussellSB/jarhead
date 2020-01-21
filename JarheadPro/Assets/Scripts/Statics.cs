@@ -23,7 +23,7 @@ public static class Statics
         Sanity.extra_decay = 0f;
         Sanity.sanity = Sanity.SANITY_MAX;
 
-        Money.money = 1000;
+        Money.money = 21000f;
         Money.moneyOverTime = 0;
 
         PlayerController.velocity = Vector3.zero;

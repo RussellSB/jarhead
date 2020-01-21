@@ -59,7 +59,7 @@ public class EffectController : MonoBehaviour
 
         // Housing Effects                                                        
         { "HousingRental",  new StatEffect(moneyPerMonth:  -1150, sanityDecay:      -1.00f) },
-        { "HousingReal",    new StatEffect(moneyInstant: -350000, sanityInstant:   -20.00f) },
+        { "HousingReal",    new StatEffect(moneyInstant: -20000, moneyPerMonth: -630, sanityInstant:   -40.00f) }, //190 000eu, with 630 a month up to 40 years, downpayment 20 000eu
 
         // Jarbud Efects
         { "EffectOvertime",  new StatEffect(sanityDecay:      -2.00f) },
@@ -69,10 +69,7 @@ public class EffectController : MonoBehaviour
         { "EffectNeglected",  new StatEffect(sanityDecay:   -4.00f) },
         { "EffectExistentialism",    new StatEffect(sanityDecay:   -1.00f) },
         { "EffectPringles",  new StatEffect(sanityDecay:   -3.00f) },
-
-        // Job Promotion
-        { "ChildInternationalPrimarySchool", new StatEffect(moneyPerMonth: -600)},
-
+        
         // Clothes
         { "Shoes", new StatEffect(moneyInstant: -80)},
         { "Dresses", new StatEffect(moneyInstant: -35)},
@@ -111,6 +108,7 @@ public class EffectController : MonoBehaviour
         { "PartnerTripPlan",  new StatEffect(moneyInstant: -1000, sanityInstant: 9) },
 
         // Child Decisions
+        { "ChildInternationalPrimarySchool", new StatEffect(moneyPerMonth: -600)},
         { "ChildPrivate", new StatEffect(sanityInstant: 6, moneyPerMonth: -600) },
         { "ChildBuyNewToys", new StatEffect(moneyInstant: -60, sanityInstant: 6) },
         { "HelpChildHomework", new StatEffect(sanityInstant:-6) },

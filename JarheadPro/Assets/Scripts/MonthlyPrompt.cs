@@ -37,7 +37,7 @@ public class MonthlyPrompt : MonoBehaviour
         GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("MonthlyPrompt");
 
         income.text = string.Format("Income: €{0:0.00}", IntervalController.income);
-        expense.text = string.Format("Expense: €{0:0.00}", IntervalController.expense);
+        expense.text = string.Format("Expenses: €{0:0.00}", IntervalController.expense);
 
         PlayerController.velocity = Vector3.zero;
         monthlyPromptUI.SetActive(true);

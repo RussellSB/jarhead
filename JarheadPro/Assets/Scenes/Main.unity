@@ -838,7 +838,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2021359577, guid: ac6a332e5efc3d841945a3c91e7ea97c, type: 3}
       propertyPath: speed
-      value: 100
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1386762398038184677, guid: ac6a332e5efc3d841945a3c91e7ea97c,
         type: 3}
@@ -7306,7 +7306,7 @@ PrefabInstance:
     - target: {fileID: 3702212498012403445, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4827241615991501027, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
@@ -7341,32 +7341,87 @@ PrefabInstance:
     - target: {fileID: 4827241616552501290, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501291, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12.04
       objectReference: {fileID: 0}
     - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_text
+      value: -20000 eu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 3.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -11.311837
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -13.926258
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.85490197
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.14117646
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.16493082
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4280951770
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_margin.y
+      value: -4.4140296
+      objectReference: {fileID: 0}
+    - target: {fileID: 4827241616552501292, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 2.4760385
       objectReference: {fileID: 0}
     - target: {fileID: 4827241616694957557, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
@@ -7468,20 +7523,25 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5763963294766366562, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 11.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6259119897283044678, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6259119897283044678, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6259119897283044678, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6259119897283044678, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
@@ -7496,7 +7556,22 @@ PrefabInstance:
     - target: {fileID: 6259119897283044678, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
       propertyPath: m_text
-      value: -350000 eu
+      value: -630 eu/month
+      objectReference: {fileID: 0}
+    - target: {fileID: 6259119897283044678, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_margin.y
+      value: -2.6064417
+      objectReference: {fileID: 0}
+    - target: {fileID: 6259119897283044678, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6259119897283044678, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 0.84045684
       objectReference: {fileID: 0}
     - target: {fileID: 7305363929403676419, guid: 24ab01714cc61704a9ef5ee21d3e3b31,
         type: 3}
