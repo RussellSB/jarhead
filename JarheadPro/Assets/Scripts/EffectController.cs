@@ -130,7 +130,7 @@ public class EffectController : MonoBehaviour
         { "BuyPringles", new StatEffect(moneyInstant: -900)}
     };
 
-    public static Dictionary<string, float> monthlyMoneyEffect = new Dictionary<string, float>() { };
+    public static Dictionary<string, (float, int)> monthlyMoneyEffect = new Dictionary<string, (float, int)>() { };
 
     // A function used by multiple other scripts to add another active effect.
     // This effect is generic over multiple possibilities, be it a Stat effect, or a summon, etc.
@@ -192,7 +192,15 @@ public class EffectController : MonoBehaviour
         // Add the monthly money effect to the dictionary, if the effect has a money per month.
         if (effect.moneyPerMonth != 0f)
         {
-            monthlyMoneyEffect.Add(refname, effect.moneyPerMonth);
+            if (monthlyMoneyEffect.ContainsKey(refname))
+            {
+                var(money, count) = monthlyMoneyEffect[refname];
+                monthlyMoneyEffect[refname] = (money, count);
+            }
+            else
+            {
+                monthlyMoneyEffect.Add(refname, (effect.moneyPerMonth,1));
+            }
 
             // Check if monthly expense or income, then add
             if (effect.moneyPerMonth > 0) IntervalController.income += effect.moneyPerMonth;
@@ -277,10 +285,10 @@ public class EffectController : MonoBehaviour
     public static void updateMoneyMonthly()
     {
         //Debug.Log(Money.money);
-        List<float> moneyFX = monthlyMoneyEffect.Values.ToList();
-        foreach (var money in moneyFX)
+        List<(float,int)> moneyFX = monthlyMoneyEffect.Values.ToList();
+        foreach (var(money,count) in moneyFX)
         {
-            Money.money = Money.money + money;
+            Money.money = Money.money + (money*count);
         }
     }
 }
