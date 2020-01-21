@@ -124,7 +124,7 @@ public class Sanity
 
     // Updates sanity per the value passed safely.
     // Returns the updated sanity.
-    public static float Update(float value)
+    public static float UpdateSanity(float value)
     {
         if (sanity + value > SANITY_MAX)
         {

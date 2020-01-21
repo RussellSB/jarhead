@@ -4337,7 +4337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8235294}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7764706}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5604,22 +5604,27 @@ PrefabInstance:
     - target: {fileID: 303569421816123839, guid: 4c5a5a6cb7bc814489534c9e0d8e825e,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 303569421816123839, guid: 4c5a5a6cb7bc814489534c9e0d8e825e,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 303569421816123839, guid: 4c5a5a6cb7bc814489534c9e0d8e825e,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 303569421816123839, guid: 4c5a5a6cb7bc814489534c9e0d8e825e,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 303569421816123839, guid: 4c5a5a6cb7bc814489534c9e0d8e825e,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 303569421965397922, guid: 4c5a5a6cb7bc814489534c9e0d8e825e,
         type: 3}

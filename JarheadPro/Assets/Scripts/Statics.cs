@@ -27,5 +27,19 @@ public static class Statics
         Money.moneyOverTime = 0;
 
         PlayerController.velocity = Vector3.zero;
+
+        IntervalController.causeWorkplacePrompt = false;
+        IntervalController.causePartnerPrompt = false;
+        IntervalController.causeChildPrompt = false;
+        IntervalController.causeOtherPrompt = true;
+
+        IntervalController.intervalCount = 1;
+        IntervalController.income = 0;
+        IntervalController.expense = 0;
+
+        NetworkController.decided_partner = false;
+        NetworkController.decided_child = false;
+
+        PartyController.partyJarbuds = new List<GameObject>();
     }
 }

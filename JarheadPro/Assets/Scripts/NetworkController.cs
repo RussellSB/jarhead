@@ -21,6 +21,9 @@ public class NetworkController : MonoBehaviour
     {
         networkJarheads = new List<GameObject>();
         currPopulation = networkJarheads.Count;
+
+        decided_partner = false;
+        decided_child = false;
     }
 
     // Update is called once per frame

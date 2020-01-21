@@ -64,11 +64,11 @@ public class EffectController : MonoBehaviour
         // Jarbud Efects
         { "EffectOvertime",  new StatEffect(sanityDecay:      -2.00f) },
         { "EffectHealthy",    new StatEffect(sanityDecay:      1.00f) },
-        { "EffectToxic",  new StatEffect(sanityDecay:      -1.00f) },
-        { "EffectLoved",    new StatEffect(sanityDecay:   1.00f) },
-        { "EffectNeglected",  new StatEffect(sanityDecay:   -2.00f) },
+        { "EffectToxic",  new StatEffect(sanityDecay:      -3.00f) },
+        { "EffectLoved",    new StatEffect(sanityDecay:   2.00f) },
+        { "EffectNeglected",  new StatEffect(sanityDecay:   -4.00f) },
         { "EffectExistentialism",    new StatEffect(sanityDecay:   -1.00f) },
-        { "EffectPringles",  new StatEffect(sanityDecay:   -1.00f) },
+        { "EffectPringles",  new StatEffect(sanityDecay:   -3.00f) },
 
         // Job Promotion
         { "ChildInternationalPrimarySchool", new StatEffect(moneyPerMonth: -600)},
@@ -92,21 +92,21 @@ public class EffectController : MonoBehaviour
 
         // Workplace Decisions
         { "ProWork",                new StatEffect(workImpact:   1,     moneyInstant:   100, sanityInstant:   -20.00f) },
-        { "WorkPromotionComputing",          new StatEffect(moneyPerMonth: 500, sanityInstant: -3, sanityDecay: -0.3f)},
-        { "WorkPromotionAverage",          new StatEffect(moneyPerMonth: 100, sanityInstant: 3, sanityDecay: -0.3f)},
-        { "WorkPromotionConsultant",          new StatEffect(moneyPerMonth: 200, sanityInstant: -3, sanityDecay: -0.3f)},
-        { "WorkPromotionLawyer",          new StatEffect(moneyPerMonth: 300, sanityInstant: -3, sanityDecay: -0.3f)},
+        { "WorkPromotionComputing",          new StatEffect(moneyPerMonth: 500, sanityInstant: -3, sanityDecay: -2.3f)},
+        { "WorkPromotionAverage",          new StatEffect(moneyPerMonth: 100, sanityInstant: 3, sanityDecay: -2.3f)},
+        { "WorkPromotionConsultant",          new StatEffect(moneyPerMonth: 200, sanityInstant: -3, sanityDecay: -2.3f)},
+        { "WorkPromotionLawyer",          new StatEffect(moneyPerMonth: 300, sanityInstant: -3, sanityDecay: -2.3f)},
         { "TeamWorkOvertime",       new StatEffect(moneyPerMonth: 100, sanityInstant: -6)},
-        { "BossOfficeParty",        new StatEffect(moneyInstant: -100, sanityInstant: 3)},
+        { "BossOfficeParty",        new StatEffect(moneyInstant: -100, sanityInstant: 1)},
         { "RedoReportQuickly",      new StatEffect(moneyPerMonth: 100, sanityInstant: -6)},
         { "EmployeeCover",          new StatEffect(moneyPerMonth: 100, sanityInstant: -6)},
-        { "GoingAwayParty",         new StatEffect(moneyInstant: -20, sanityInstant: 3)},
-        { "HelpEmployeePersonal",   new StatEffect(moneyInstant: -50, sanityInstant: 3)},
+        { "GoingAwayParty",         new StatEffect(moneyInstant: -20, sanityInstant: 1)},
+        { "HelpEmployeePersonal",   new StatEffect(moneyInstant: -50, sanityInstant: 1)},
 
         // Partner Decisions
         { "NetflixAndChill",  new StatEffect(moneyInstant: -100, sanityInstant: 6)},
         { "ValentinesDay",  new StatEffect(moneyInstant: -50, sanityInstant: 3) },
-        { "JarheadChild",  new StatEffect(moneyInstant: -1000, sanityInstant: 9, moneyPerMonth: 333) },
+        { "JarheadChild",  new StatEffect(moneyInstant: -1000, sanityInstant: 9, moneyPerMonth: -333) },
         { "AnniversaryPlan",  new StatEffect(moneyInstant: -200, sanityInstant: 6) },
         { "PartnerTripPlan",  new StatEffect(moneyInstant: -1000, sanityInstant: 9) },
 
@@ -119,11 +119,11 @@ public class EffectController : MonoBehaviour
 
         // Other Decisions
         { "InvestPasstime", new StatEffect(moneyPerMonth: -30, sanityDecay: 0.5f) },
-        { "FixBrokenCar", new StatEffect(moneyInstant: -500, sanityInstant: 3) },
-        { "BuyNewFurniture", new StatEffect(moneyInstant: -200, sanityInstant: 6) },
+        { "FixBrokenCar", new StatEffect(moneyInstant: -700, sanityInstant: 3) },
+        { "BuyNewFurniture", new StatEffect(moneyInstant: -500, sanityInstant: 6) },
         { "BuyNewDishwasher", new StatEffect(moneyInstant: -250, sanityInstant: 6) },
         { "TakePuppy", new StatEffect(moneyInstant: -60, sanityInstant: 3) },
-        { "TakeFriendIn", new StatEffect(sanityInstant: 6, moneyPerMonth: 200, sanityDecay: -0.3f) },
+        { "TakeFriendIn", new StatEffect(sanityInstant: 6, moneyPerMonth: 200, sanityDecay: -1.3f) },
 
         // Easter Egg Decisions
         { "AvoidPringles", new StatEffect(sanityInstant: -50)},
@@ -186,7 +186,7 @@ public class EffectController : MonoBehaviour
 
         StatEffect effect = StatEffects[refname];
         Money.money += effect.moneyInstant;
-        Sanity.Update(effect.sanityInstant);
+        Sanity.UpdateSanity(effect.sanityInstant);
         Sanity.UpdateDecay(effect.sanityDecay);
 
         // Add the monthly money effect to the dictionary, if the effect has a money per month.

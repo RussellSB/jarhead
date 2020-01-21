@@ -51,11 +51,13 @@ public class GameOver : MonoBehaviour
     {
         GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("Click");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        //Statics.ResetStatics();
     }
 
     public void Restart()
     {
         GameObject.FindGameObjectWithTag("SFX").GetComponent<SFXManager>().PlaySound("Click");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //Statics.ResetStatics();
     }
 }

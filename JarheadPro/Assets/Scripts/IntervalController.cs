@@ -38,18 +38,10 @@ public class IntervalController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        causeWorkplacePrompt = false;
-        causePartnerPrompt = false;
-        causeChildPrompt = false;
-        causeOtherPrompt = true;
-
         player = GameObject.FindGameObjectWithTag("Player");
         initPos = player.transform.position;
         prevX = player.transform.position.x;
         countdown = intervalLength;
-
-        income = 0;
-        expense = 0;
 
         initDecisionLibraries();
         spawnAll();
