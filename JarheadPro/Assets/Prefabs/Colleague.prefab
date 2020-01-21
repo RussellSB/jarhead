@@ -228,6 +228,36 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 6.96
       objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_margin.w
+      value: -48.08266
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 12.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_margin.y
+      value: -84.43771
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_margin.z
+      value: -104.828026
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4289285434468498230, guid: 856783db6527a7c43890422aabf1f8e6,
+        type: 3}
+      propertyPath: m_margin.x
+      value: -33.141388
+      objectReference: {fileID: 0}
     - target: {fileID: 4289285434774528841, guid: 856783db6527a7c43890422aabf1f8e6,
         type: 3}
       propertyPath: m_Name
