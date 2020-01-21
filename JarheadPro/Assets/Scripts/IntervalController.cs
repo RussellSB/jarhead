@@ -122,9 +122,6 @@ public class IntervalController : MonoBehaviour
         // The special new jarheads
         if (intervalCount == 2) Partner.transform.position = new Vector2(Partner.transform.position.x, -15f);
         if (intervalCount == 3 && NetworkController.decided_partner) Child.transform.position = new Vector2(Child.transform.position.x, -17.5f);
-
-        Debug.Log("Expense: " + expense);
-        Debug.Log("Income: " + income);
     }
 
     public void spawnAll()
@@ -339,7 +336,7 @@ public class IntervalController : MonoBehaviour
         workplaceLibrary.Add(new DecisionScenario(
             "A senior employee decided to retire early from his post, and the boss chose you to take his place. Do you accept the promotion?",
             false,
-            "ProWork&WorkPromotionAverage",
+            "WorkPromotionAverage",
             "CHOICE2ID_PLACEHOLDER"));
         workplaceLibrary.Add(new DecisionScenario(
             "Your team is behind on a project and has decided to work overtime to manage. Will you stay and work?",
@@ -347,7 +344,7 @@ public class IntervalController : MonoBehaviour
             "ProWork&TeamWorkOvertime",
             "CHOICE2ID_PLACEHOLDER"));
         workplaceLibrary.Add(new DecisionScenario(
-           "The boss decided to have an office party. Going? (hope he doesn't get cold feet)",
+           "The boss decided to have an office party. Let's hope he doesn't get cold feet. Are you going?",
            true,
            "BossOfficeParty",
            "CHOICE2ID_PLACEHOLDER"));
@@ -364,12 +361,12 @@ public class IntervalController : MonoBehaviour
         workplaceLibrary.Add(new DecisionScenario(
             "The office decided to plan a going away party for a fellow employee. Will you go?",
             true,
-            "ProWork&GoingAwayParty",
+            "GoingAwayParty",
             "CHOICE2ID_PLACEHOLDER"));
         workplaceLibrary.Add(new DecisionScenario(
             "An employee is having a hard time in his personal life, so everyone decided to give some money in order to help. Chip in?",
             true,
-            "ProWork&HelpEmployeePersonal",
+            "HelpEmployeePersonal",
             "CHOICE2ID_PLACEHOLDER"));
     }
 }

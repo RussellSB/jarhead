@@ -55,7 +55,20 @@ public class EffectController : MonoBehaviour
         { "JobCashier",     new StatEffect(moneyPerMonth:   1155) },
         { "JobDelivery1",   new StatEffect(moneyPerMonth:   1200) },
         { "JobDelivery2",   new StatEffect(moneyPerMonth:   1250) },
-        { "JobConsultant",  new StatEffect(moneyPerMonth:   2421) },
+        { "JobConsultant",  new StatEffect(moneyPerMonth:   2421) },            
+
+        // Housing Effects                                                        
+        { "HousingRental",  new StatEffect(moneyPerMonth:  -1150, sanityDecay:      -1.00f) },
+        { "HousingReal",    new StatEffect(moneyInstant: -350000, sanityInstant:   -20.00f) },
+
+        // Jarbud Efects
+        { "EffectOvertime",  new StatEffect(sanityDecay:      -2.00f) },
+        { "EffectHealthy",    new StatEffect(sanityDecay:      1.00f) },
+        { "EffectToxic",  new StatEffect(sanityDecay:      -1.00f) },
+        { "EffectLoved",    new StatEffect(sanityDecay:   1.00f) },
+        { "EffectNeglected",  new StatEffect(sanityDecay:   -2.00f) },
+        { "EffectExistentialism",    new StatEffect(sanityDecay:   -1.00f) },
+        { "EffectPringles",  new StatEffect(sanityDecay:   -1.00f) },
 
         // Job Promotion
         { "ChildInternationalPrimarySchool", new StatEffect(moneyPerMonth: -600)},
@@ -63,11 +76,7 @@ public class EffectController : MonoBehaviour
         // Clothes
         { "Shoes", new StatEffect(moneyInstant: -80)},
         { "Dresses", new StatEffect(moneyInstant: -35)},
-        { "Jeans", new StatEffect(moneyInstant: -55)},        
-
-        // Housing Effects                                                        
-        { "HousingRental",  new StatEffect(moneyPerMonth:  -1150, sanityDecay:      -1.00f) },
-        { "HousingReal",    new StatEffect(moneyInstant: -350000, sanityInstant:   -20.00f) },
+        { "Jeans", new StatEffect(moneyInstant: -55)},   
 
         // Jarhead Effects
         { "JarheadPartner",  new StatEffect(moneyPerMonth:  -20, sanityDecay:      2.00f) },
@@ -82,17 +91,17 @@ public class EffectController : MonoBehaviour
         { "ProExistential",         new StatEffect(existentialImpact:   1, sanityInstant:   -40.00f) },
 
         // Workplace Decisions
-        { "ProWork",                new StatEffect(workImpact:   1,     moneyInstant:   50, sanityInstant:   -20.00f) },
+        { "ProWork",                new StatEffect(workImpact:   1,     moneyInstant:   100, sanityInstant:   -20.00f) },
         { "WorkPromotionComputing",          new StatEffect(moneyPerMonth: 500, sanityInstant: -3, sanityDecay: -0.3f)},
         { "WorkPromotionAverage",          new StatEffect(moneyPerMonth: 100, sanityInstant: 3, sanityDecay: -0.3f)},
         { "WorkPromotionConsultant",          new StatEffect(moneyPerMonth: 200, sanityInstant: -3, sanityDecay: -0.3f)},
         { "WorkPromotionLawyer",          new StatEffect(moneyPerMonth: 300, sanityInstant: -3, sanityDecay: -0.3f)},
         { "TeamWorkOvertime",       new StatEffect(moneyPerMonth: 200, sanityInstant: -6)},
-        { "BossOfficeParty",        new StatEffect(moneyPerMonth: -100, sanityInstant: 3)},
+        { "BossOfficeParty",        new StatEffect(moneyInstant: -100, sanityInstant: 3)},
         { "RedoReportQuickly",      new StatEffect(moneyPerMonth: 200, sanityInstant: -6)},
         { "EmployeeCover",          new StatEffect(moneyPerMonth: 200, sanityInstant: -6)},
-        { "GoingAwayParty",         new StatEffect(moneyPerMonth: -100, sanityInstant: 3)},
-        { "HelpEmployeePersonal",   new StatEffect(moneyPerMonth: -100, sanityInstant: 3)},
+        { "GoingAwayParty",         new StatEffect(moneyInstant: -100, sanityInstant: 3)},
+        { "HelpEmployeePersonal",   new StatEffect(moneyInstant: -200, sanityInstant: 3)},
 
         // Partner Decisions
         { "NetflixAndChill",  new StatEffect(moneyInstant: -100, sanityInstant: 6)},
@@ -202,12 +211,12 @@ public class EffectController : MonoBehaviour
             if (partnerCount >= impactThreshold)
             {
                 partnerSummoned = true;
-                addEffect("Summon-EffectHealthy");
+                addEffect("Summon-EffectHealthy&EffectHealthy");
             }
             if (partnerCount <= -impactThreshold)
             {
                 partnerSummoned = true;
-                addEffect("Summon-EffectToxic");
+                addEffect("Summon-EffectToxic&EffectToxic");
             }
         }
 
@@ -216,7 +225,7 @@ public class EffectController : MonoBehaviour
             if (childCount >= impactThreshold)
             {
                 childSummoned = true;
-                addEffect("Summon-EffectLoved");
+                addEffect("Summon-EffectLoved&EffectLoved");
             }
             if (childCount <= -impactThreshold)
             {
@@ -230,7 +239,7 @@ public class EffectController : MonoBehaviour
             if (workCount >= impactThreshold)
             {
                 overtimeSummoned = true;
-                addEffect("Summon-EffectOvertime");
+                addEffect("Summon-EffectOvertime&EffectOvertime");
             }
         }
 
@@ -239,7 +248,7 @@ public class EffectController : MonoBehaviour
             if (existentialCount >= impactThreshold)
             {
                 existentialSummoned = true;
-                addEffect("Summon-EffectExistentialism");
+                addEffect("Summon-EffectExistentialism&EffectExistentialism");
             }
         }
     }
